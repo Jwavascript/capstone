@@ -17,17 +17,19 @@
       [Supabase Postgres] ← Drizzle
               ▲
               │
-[Hono 서버 :3000] /api/rankings · /api/bookmarks · /api/folders · /api/auth/*(Better Auth)
-  │ 같은 주소에서 public/index.html도 줌
-  ▼
-[브라우저 index.html] fetch로 /api 호출
+[Hono API 서버 :8787] /api/rankings · /api/bookmarks · /api/folders · /api/auth/*(Better Auth)
+              ▲ 그대로 중계(메서드 · 본문 · 상태 코드 · 쿠키)
+[Next.js :3000] BFF: /api/* → Hono · 화면(public/index.html)도 줌
+              ▲
+[브라우저 index.html] fetch로 같은 주소의 /api 호출
 ```
 
 | 영역 | 선택 | 들어오는 단계 |
 |---|---|---|
 | 화면 | `frontend/index.html`을 끝까지 씀. 번들러 없음 | ex02 |
 | API 계약 | OpenAPI(`openapi.yaml`) | ex01 |
-| 서버 | Hono + Node, TypeScript | ex02 |
+| API 서버 | Hono + Node, TypeScript | ex02 |
+| BFF | Next.js(App Router) 라우트 핸들러가 `/api/*`를 Hono로 중계 | ex02 |
 | 입력 검사 | Zod | ex03 |
 | 테스트 | Vitest | ex04 |
 | DB | Supabase Postgres + Drizzle | ex05 |
@@ -58,8 +60,9 @@ capstone/
 ├ .github/workflows/daily.yml   ex09부터, 최신 exXX를 가리킴
 └ exXX/            단계별 전체 복사본
    ├ openapi.yaml · package.json · tsconfig.json · .env.example
-   ├ public/index.html
-   ├ src/      server.ts · routes/ · sample.ts · schemas.ts · db/ · collect.ts · group.ts · summarize.ts · daily.ts · auth.ts
+   ├ public/index.html              화면 (Next.js가 줌)
+   ├ app/api/[...path]/route.ts     BFF: /api/* → Hono 중계
+   ├ server/   index.ts · routes/ · sample.ts · schemas.ts · db/ · collect.ts · group.ts · summarize.ts · daily.ts · auth.ts
    ├ drizzle/  마이그레이션 (ex05)
    └ test/     *.test.ts · fixtures/ (ex04)
 ```
@@ -70,7 +73,7 @@ capstone/
 |---|---|---|---|---|
 | 0 | 준비 | 첫 커밋, 결정 D0 · D2 확정, 검색 API 응답 확인 | GitHub · 네이버 개발자센터 | 진행 중 |
 | ex01 | OpenAPI 계약 | 화면이 바라는 API(폴더 포함)가 `openapi.yaml`로 고정 | — | 완료 (PASS 9/9, 2026-10-07) |
-| ex02 | Hono 구현 · 화면 연결 | 화면이 가짜 데이터 대신 서버(메모리 샘플)로 동작 | — | 대기 |
+| ex02 | Hono 구현 · Next.js 중계(BFF) | 화면이 가짜 데이터 대신 Next.js → Hono(메모리 샘플)로 동작 | — | 완료 (PASS 28/28, 2026-10-07) |
 | ex03 | Zod 입력 검사 | 잘못된 · 미래 날짜, 잘못된 북마크 · 폴더 요청을 거절 | — | 대기 |
 | ex04 | Vitest | 랭킹 규칙과 API 동작이 테스트로 고정 (M1) | — | 대기 |
 | ex05 | Supabase + Drizzle | 서버를 다시 켜도 랭킹 · 북마크 · 폴더 유지 | Supabase | 대기 |
@@ -95,7 +98,7 @@ capstone/
 | 단계 | 예상 새 패키지 | 미리 알 것 (AI가 추측하기 쉬운 곳) |
 |---|---|---|
 | ex01 | 없음 | 실패 메시지는 SPEC 문구 그대로. 폴더 이름 규칙은 AC-10-2. 로그인 관련 응답(401)은 ex11에서 계약에 더함 |
-| ex02 | hono · @hono/node-server · typescript · tsx | 화면 mock의 `POOL` · `rng` · `seedBookmarks`를 `src/sample.ts`로 옮겨 **실행일 기준** 샘플을 만듦(고정 날짜 JSON 금지). 요약 null 샘플 하나 유지(AC-04-3). 북마크 · 폴더는 메모리, 사용자 구분 없음. 해제 후 "되돌리기"는 다시 저장 요청으로 |
+| ex02 | hono · @hono/node-server · next · react · react-dom · typescript · tsx · @types/node · @types/react | Next.js는 3000, Hono는 8787. BFF는 `/api/*`의 메서드 · 쿼리 · 본문 · 상태 코드 · 헤더(쿠키 포함)를 그대로 넘기고, Hono가 꺼져 있으면 502. 화면은 `public/index.html` 그대로 두고 `/`에서 보이게 함. 두 서버를 띄우는 방법을 PLAN에 적음. 화면 mock의 `POOL` · `rng` · `seedBookmarks`를 `server/sample.ts`로 옮겨 **실행일 기준** 샘플을 만듦(고정 날짜 JSON 금지). 요약 null 샘플 하나 유지(AC-04-3). 북마크 · 폴더는 메모리, 사용자 구분 없음. 해제 후 "되돌리기"는 다시 저장 요청으로 |
 | ex03 | zod · @hono/zod-validator | 미래 날짜 판정은 KST 기준. 폴더 이름은 앞뒤 공백을 뺀 1~16자. 같은 이름 폴더를 허용할지는 PLAN에서 정함. 오류 메시지는 화면에 보일 문구 |
 | ex04 | vitest | 테스트는 고정 날짜 · 샘플로(실행일에 따라 결과가 바뀌지 않게). 네트워크 · 외부 API 호출 없음 |
 | ex05 | drizzle-orm · postgres · drizzle-kit | 샘플은 seed 명령으로 DB에. `DATABASE_URL`은 Supabase 연결 풀러 주소. 마이그레이션 파일도 커밋 |
@@ -128,10 +131,10 @@ capstone/
 | # | 항목 | 내용 | 정할 때 | 상태 |
 |---|---|---|---|---|
 | D0 | 뉴스 출처 | 네이버 검색 API(뉴스). 페이지 크롤링은 하지 않음(SPEC #18). 약관에서 결과 저장 · AI 요약 사용 허용 여부는 0단계에서 확인 | 2026-10-07 | 확정 |
-| D1 | 화면 연결 | Hono가 `public/index.html`과 `/api/*`를 같은 주소(3000)에서 줌. Next.js 안 씀 | ex01 전 | 제안 |
+| D1 | 화면 연결 | Next.js(3000)가 화면과 `/api/*`를 주고, `/api/*`는 Hono API 서버(8787)로 중계(BFF). 브라우저는 Hono를 직접 부르지 않음 | 2026-10-07 | 확정 |
 | D2 | 북마크 폴더 | MVP에 넣음. 지금 화면 동작 그대로(SPEC US-10). 이름 변경 · 삭제 · 이동은 범위 밖 | 2026-10-07 | 확정 |
 | D3 | 날짜 기준 | KST. 수집은 매일 06:00. date 없이 부르면 가장 최근 수집일을 돌려주고, 화면 첫 진입은 그 날짜 | ex01 전 | 제안 |
-| D4 | 언어 · 런타임 | TypeScript, Node 20 이상(현재 PC는 24), `npm run build` = `tsc` | ex02 전 | 제안 |
+| D4 | 언어 · 런타임 | TypeScript, Node 20 이상(현재 PC는 24), `npm run build` = `next build` + Hono 서버 타입 검사(`tsc --noEmit`) | ex02 전 | 제안 |
 | D5 | 자동 실행 | GitHub Actions 예약 실행. 서버가 꺼져 있어도 돎 | ex09 PLAN 전 | 제안 |
 | D6 | AI 요약 | 모델은 `claude-opus-5-5`(기본값. 더 싼 모델로 바꿀지는 사용자 결정). 입력은 묶인 기사의 제목 · 설명문만 | ex08 PLAN 전 | 제안 |
 | D7 | 북마크 대상 | 날짜별 이슈 한 건(issueId) + 폴더(folderId). 카드 정보는 이슈에서 가져옴 | ex01 전 | 제안 |
@@ -192,7 +195,8 @@ API (ex01에서 확정)
 
 | 이름 | 쓰는 곳 | 단계 |
 |---|---|---|
-| `PORT` | 서버 포트(기본 3000) | ex02 |
+| `API_PORT` | Hono API 서버 포트(기본 8787). Next.js는 3000 | ex02 |
+| `API_URL` | BFF가 중계할 Hono 주소(기본 `http://localhost:8787`) | ex02 |
 | `DATABASE_URL` | Supabase 접속(연결 풀러 주소) | ex05 |
 | `NAVER_CLIENT_ID` · `NAVER_CLIENT_SECRET` | 네이버 검색 API | ex06 |
 | `ANTHROPIC_API_KEY` | AI 요약 | ex08 |
@@ -229,6 +233,10 @@ API (ex01에서 확정)
 - ex01: 화면 샘플의 이슈 id(`eco-0` 등)에 날짜가 없어 날짜별 이슈(D7)와 `DELETE /api/bookmarks/{issueId}`가 구분되지 않음 → ex02에서 날짜를 넣은 id 규칙을 정함
 - ex01: 화면 데이터와 계약의 칸 이름 · 모양이 다름(`sec`·`count`·`folder` 객체·숫자 `savedAt`·섹션 객체 ↔ `section`·`articleCount`·`folderId`·ISO `savedAt`·`sections` 배열) → ex02에서 화면 코드를 계약에 맞춰 고침
 - ex01: 스키마가 섹션 `key`와 `name`의 짝을 묶지 않음(`pol`+"경제"도 통과) → ex02 응답은 짝을 맞추고, 스키마 정리는 ex04
+- ex02: 입력 검사가 없어 깨진 JSON · 빠진 칸은 500, 17자 이상 폴더 이름도 201, `2026-10-7` 같은 날짜도 받음, 내일 날짜는 400이 아니라 404 → ex03
+- ex02: 화면의 "오늘"은 브라우저 지역 시간, 서버는 KST → 한국 밖 · 자정 근처에서 어긋날 수 있음. ex03에서 화면도 KST 기준으로 맞출지 정함
+- ex02: openapi.yaml 예시의 이슈 id(`pol-0`)가 실제 id 규칙(`{date}-{section}-{번호}`)과 다름 → ex04 정리 때 고침
+- ex02: `next dev`가 `AGENTS.md` · `next-env.d.ts`를, `next build`가 `tsconfig.tsbuildinfo`를 만듦 → 루트 `.gitignore`에 넣음. 검증표의 `it.sec` 검색은 `it.section`과 겹치니 낱말 경계로 씀
 
 ## 11. 시연 점검표 (M3 뒤, 발표 전날 다시)
 

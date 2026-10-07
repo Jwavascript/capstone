@@ -1,0 +1,421 @@
+openapi: 3.1.0
+info:
+  title: 이슈랭크 API
+  version: 0.1.0
+  description: 화면(index.html)이 서버에 바라는 랭킹 · 북마크 · 폴더 API 계약.
+
+servers:
+  - url: http://localhost:3000
+
+# 로그인(401)은 ex10 · ex11에서 더함. 지금은 인증 없음
+security: []
+
+paths:
+  /api/rankings:
+    get:
+      operationId: getRankings
+      summary: 그날 섹션별 Top 5 랭킹
+      description: date를 생략하면 가장 최근 수집일의 랭킹을 준다.
+      parameters:
+        - name: date
+          in: query
+          required: false
+          description: 조회할 날짜(KST, YYYY-MM-DD). 생략하면 가장 최근 수집일.
+          schema:
+            type: string
+            format: date
+          example: '2026-10-07'
+      responses:
+        '200':
+          description: 랭킹
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ranking'
+              example:
+                date: '2026-10-07'
+                updatedAt: '2026-10-07T06:00:00+09:00'
+                sections:
+                  - key: pol
+                    name: 정치
+                    issues:
+                      - id: pol-0
+                        date: '2026-10-07'
+                        section: pol
+                        rank: 1
+                        title: 내년도 예산안 국회 상임위 심사 본격화
+                        summary:
+                          - 상임위별 예비심사가 시작돼 증액·감액 쟁점이 드러나고 있다.
+                          - 여야는 지역 SOC와 복지 예산 규모를 두고 이견을 보였다.
+                          - 예결위는 다음 달 중순까지 수정안을 마련할 계획이다.
+                        articleCount: 184
+                        url: https://news.naver.com/
+                  - key: eco
+                    name: 경제
+                    issues:
+                      - id: eco-0
+                        date: '2026-10-07'
+                        section: eco
+                        rank: 1
+                        title: 기준금리 동결, 연내 인하 가능성 시사
+                        summary:
+                          - 한국은행이 기준금리를 현 수준에서 동결했다.
+                          - 물가 둔화 흐름이 이어지면 인하를 검토할 수 있다고 밝혔다.
+                          - 시장은 연말 인하 가능성을 높게 반영하기 시작했다.
+                        articleCount: 152
+                        url: https://news.naver.com/
+                  - key: soc
+                    name: 사회
+                    issues:
+                      - id: soc-6
+                        date: '2026-10-07'
+                        section: soc
+                        rank: 1
+                        title: 저출생 대책, 육아휴직 급여 상한 인상
+                        summary: null
+                        articleCount: 97
+                        url: https://news.naver.com/
+                  - key: cul
+                    name: 생활·문화
+                    issues:
+                      - id: cul-1
+                        date: '2026-10-07'
+                        section: cul
+                        rank: 1
+                        title: 국내 영화 관객 수 회복세
+                        summary:
+                          - 추석 연휴 개봉작 흥행으로 관객 수가 반등했다.
+                          - 중예산 영화들이 입소문을 타며 장기 상영 중이다.
+                          - 업계는 연말까지 회복세가 이어질지 주목한다.
+                        articleCount: 76
+                        url: https://news.naver.com/
+                  - key: wor
+                    name: 세계
+                    issues:
+                      - id: wor-4
+                        date: '2026-10-07'
+                        section: wor
+                        rank: 1
+                        title: 기후총회 앞두고 감축 목표 상향 압박
+                        summary:
+                          - 주요국에 2035년 감축 목표 제출이 요구되고 있다.
+                          - 개도국은 재원 지원 확대를 조건으로 내걸었다.
+                          - 총회는 다음 달 개막한다.
+                        articleCount: 63
+                        url: https://news.naver.com/
+                  - key: it
+                    name: IT·과학
+                    issues:
+                      - id: it-1
+                        date: '2026-10-07'
+                        section: it
+                        rank: 1
+                        title: 차세대 HBM 양산 경쟁 본격화
+                        summary:
+                          - 국내 업체들이 차세대 고대역폭 메모리 샘플 공급을 시작했다.
+                          - 주요 GPU 업체의 인증 일정이 관건이다.
+                          - 내년 상반기 양산 체제 전환이 목표다.
+                        articleCount: 141
+                        url: https://news.naver.com/
+        '404':
+          description: 해당 날짜의 랭킹 데이터 없음
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: 해당 날짜의 랭킹 데이터가 없습니다
+
+  /api/bookmarks:
+    get:
+      operationId: listBookmarks
+      summary: 북마크 목록(최근 저장 순)
+      responses:
+        '200':
+          description: 북마크 배열, savedAt 내림차순
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Bookmark'
+              example:
+                - id: it-1
+                  date: '2026-10-07'
+                  section: it
+                  rank: 1
+                  title: 차세대 HBM 양산 경쟁 본격화
+                  summary:
+                    - 국내 업체들이 차세대 고대역폭 메모리 샘플 공급을 시작했다.
+                    - 주요 GPU 업체의 인증 일정이 관건이다.
+                    - 내년 상반기 양산 체제 전환이 목표다.
+                  articleCount: 141
+                  url: https://news.naver.com/
+                  folderId: f1
+                  savedAt: '2026-10-07T09:12:00+09:00'
+                - id: eco-0
+                  date: '2026-10-06'
+                  section: eco
+                  rank: 2
+                  title: 기준금리 동결, 연내 인하 가능성 시사
+                  summary:
+                    - 한국은행이 기준금리를 현 수준에서 동결했다.
+                    - 물가 둔화 흐름이 이어지면 인하를 검토할 수 있다고 밝혔다.
+                    - 시장은 연말 인하 가능성을 높게 반영하기 시작했다.
+                  articleCount: 88
+                  url: https://news.naver.com/
+                  folderId: f2
+                  savedAt: '2026-10-06T21:40:00+09:00'
+    post:
+      operationId: createBookmark
+      summary: 이슈를 폴더에 북마크
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookmarkCreate'
+            example:
+              issueId: it-1
+              folderId: f1
+      responses:
+        '201':
+          description: 저장된 북마크
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bookmark'
+              example:
+                id: it-1
+                date: '2026-10-07'
+                section: it
+                rank: 1
+                title: 차세대 HBM 양산 경쟁 본격화
+                summary:
+                  - 국내 업체들이 차세대 고대역폭 메모리 샘플 공급을 시작했다.
+                  - 주요 GPU 업체의 인증 일정이 관건이다.
+                  - 내년 상반기 양산 체제 전환이 목표다.
+                articleCount: 141
+                url: https://news.naver.com/
+                folderId: f1
+                savedAt: '2026-10-07T09:12:00+09:00'
+        '404':
+          description: 이슈 또는 폴더 없음
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                issueNotFound:
+                  summary: 없는 이슈
+                  value:
+                    message: 이슈를 찾을 수 없습니다
+                folderNotFound:
+                  summary: 없는 폴더
+                  value:
+                    message: 폴더를 찾을 수 없습니다
+        '409':
+          description: 이미 북마크한 이슈
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: 이미 북마크한 이슈입니다
+
+  /api/bookmarks/{issueId}:
+    delete:
+      operationId: deleteBookmark
+      summary: 북마크 해제
+      parameters:
+        - name: issueId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: it-1
+      responses:
+        '204':
+          description: 해제됨(본문 없음)
+        '404':
+          description: 북마크 없음
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: 북마크를 찾을 수 없습니다
+
+  /api/folders:
+    get:
+      operationId: listFolders
+      summary: 폴더 목록(만든 순)
+      responses:
+        '200':
+          description: 폴더 배열, 만든 순
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Folder'
+              example:
+                - id: f1
+                  name: 반도체·AI
+                  count: 4
+                - id: f2
+                  name: 부동산·금리
+                  count: 3
+                - id: f3
+                  name: 나중에 읽기
+                  count: 3
+    post:
+      operationId: createFolder
+      summary: 폴더 만들기
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FolderCreate'
+            example:
+              name: 반도체·AI
+      responses:
+        '201':
+          description: 만든 폴더
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Folder'
+              example:
+                id: f4
+                name: 반도체·AI
+                count: 0
+        '400':
+          description: 폴더 이름 규칙 위반
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: 폴더 이름은 1~16자로 입력해 주세요
+
+components:
+  schemas:
+    SectionKey:
+      type: string
+      enum: [pol, eco, soc, cul, wor, it]
+
+    Ranking:
+      type: object
+      required: [date, updatedAt, sections]
+      properties:
+        date:
+          type: string
+          format: date
+          description: 랭킹 날짜(KST, YYYY-MM-DD)
+        updatedAt:
+          type: string
+          format: date-time
+          description: 마지막 갱신 시각(ISO 8601, +09:00)
+        sections:
+          type: array
+          minItems: 6
+          maxItems: 6
+          items:
+            type: object
+            required: [key, name, issues]
+            properties:
+              key:
+                $ref: '#/components/schemas/SectionKey'
+              name:
+                type: string
+                enum: [정치, 경제, 사회, 생활·문화, 세계, IT·과학]
+              issues:
+                type: array
+                maxItems: 5
+                items:
+                  $ref: '#/components/schemas/Issue'
+
+    Issue:
+      type: object
+      required: [id, date, section, rank, title, summary, articleCount, url]
+      properties:
+        id:
+          type: string
+        date:
+          type: string
+          format: date
+        section:
+          $ref: '#/components/schemas/SectionKey'
+        rank:
+          type: integer
+          minimum: 1
+          maximum: 5
+        title:
+          type: string
+        summary:
+          description: AI 3줄 요약. 없으면 null(화면은 "요약을 준비 중입니다")
+          type: [array, 'null']
+          minItems: 3
+          maxItems: 3
+          items:
+            type: string
+        articleCount:
+          type: integer
+          minimum: 1
+        url:
+          type: string
+          format: uri
+
+    Bookmark:
+      allOf:
+        - $ref: '#/components/schemas/Issue'
+        - type: object
+          required: [folderId, savedAt]
+          properties:
+            folderId:
+              type: string
+            savedAt:
+              type: string
+              format: date-time
+              description: 저장 시각(ISO 8601)
+
+    BookmarkCreate:
+      type: object
+      required: [issueId, folderId]
+      properties:
+        issueId:
+          type: string
+        folderId:
+          type: string
+
+    Folder:
+      type: object
+      required: [id, name, count]
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+          minLength: 1
+          maxLength: 16
+        count:
+          type: integer
+          minimum: 0
+
+    FolderCreate:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 16
+
+    Error:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string

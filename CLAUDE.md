@@ -40,4 +40,4 @@
 
 ## 6. 환경
 - Windows, Python 없음. 셸 명령은 `npm.cmd` · `npx.cmd`
-- 3000 포트 사용. 한글 본문 요청 확인은 curl 대신 node fetch
+- 3000(Next.js) · 8787(Hono) 포트 사용. 띄운 서버는 끝나면 둘 다 끔. 한글 본문 요청 확인은 curl 대신 node fetch

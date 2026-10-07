@@ -15,7 +15,7 @@
 | exXX | 주제 | SPEC 근거 |
 |---|---|---|
 | ex01 | OpenAPI 계약 | US-03, 05, 07, 08, 09, 10 |
-| ex02 | Hono 구현, 화면이 가짜 데이터 대신 API 호출 | AC-03-1, AC-05-1, AC-07-1·2, AC-08-1·2, AC-09-1, AC-10-1~4 |
+| ex02 | Hono 구현, Next.js가 중계(BFF), 화면이 가짜 데이터 대신 API 호출 | AC-03-1, AC-05-1, AC-07-1·2, AC-08-1·2, AC-09-1, AC-10-1~4 |
 | ex03 | Zod 입력 검사(날짜 · 섹션 · 폴더 이름) | AC-09-3, AC-09-4, AC-10-2 |
 | ex04 | Vitest 테스트, openapi.yaml 정리 | AC-03-2 |
 | ex05 | Supabase + Drizzle (랭킹 · 북마크 · 폴더 저장) | US-09, US-10, AC-01-1(저장) |
