@@ -75,7 +75,7 @@ capstone/
 | ex01 | OpenAPI 계약 | 화면이 바라는 API(폴더 포함)가 `openapi.yaml`로 고정 | — | 완료 (PASS 9/9, 2026-10-07) |
 | ex02 | Hono 구현 · Next.js 중계(BFF) | 화면이 가짜 데이터 대신 Next.js → Hono(메모리 샘플)로 동작 | — | 완료 (PASS 28/28, 2026-10-07) |
 | ex03 | Zod 입력 검사 | 잘못된 · 미래 날짜, 잘못된 북마크 · 폴더 요청을 거절 | — | 완료 (PASS 38/38, 2026-10-07) |
-| ex04 | Vitest | 랭킹 규칙과 API 동작이 테스트로 고정 (M1) | — | 대기 |
+| ex04 | Vitest | 랭킹 규칙과 API 동작이 테스트로 고정 (M1) | — | 완료 (PASS 24/24, 2026-10-07) · M1 달성 |
 | ex05 | Supabase + Drizzle | 서버를 다시 켜도 랭킹 · 북마크 · 폴더 유지 | Supabase | 대기 |
 | ex06 | 네이버 검색 API 수집 | 명령 한 번으로 섹션별 그날 기사가 DB에 | 네이버 검색 API 키 | 대기 |
 | ex07 | 이슈 묶기 | 그날 기사가 이슈로 묶이고 연관기사 수가 생김 | — | 대기 |
@@ -241,6 +241,10 @@ API (ex01에서 확정)
 - ex03: zod `.max()`는 이모지 같은 서로게이트 쌍을 코드 포인트로 세서 `😀`×9(length 18)도 201. 화면 maxlength는 UTF-16 단위 → ex04에서 기준을 정해 테스트로 고정
 - ex03: `app.onError`가 400 예외를 모두 "요청 형식이 올바르지 않습니다"로 바꿈 → 뒤 단계에서 다른 400 예외가 생기면 문구 겹침 주의
 - ex03: 계약 `BookmarkCreate`에 issueId 패턴 · folderId minLength 없음, 예시 id(`it-1`)와 folders 400 description이 새 규칙과 어긋남 → ex04 계약 정리
+- ex04: 위 ex01~ex03 계약 메모(예시 id · IssueId · 섹션 짝 · folderId · folders 400)는 처리됨. 폴더 이름 글자 수는 코드 포인트 기준으로 확정(😀×16 통과 · ×17 거절), 순위 3번째 기준은 id 오름차순(PLAN 기본값)
+- ex04: `rankIssues`의 id 오름차순은 문자열 비교라 번호가 두 자리면 `-10`이 `-9`보다 앞 → 실제 이슈 id를 정하는 ex05 · ex07에서 확인
+- ex04: openapi의 date 설명("생략하면 가장 최근 수집일")과 지금 동작(KST 오늘)이 다름. 샘플에선 같지만 ex05에서 DB 기준으로 맞춤
+- ex04: Redocly 경고 15개는 `Section` oneOf 가지에 `required`가 없어서 남(가지마다 넣으면 사라짐). vitest는 `"type": "module"`이 없다는 경고만 남(동작 문제 없음)
 
 ## 11. 시연 점검표 (M3 뒤, 발표 전날 다시)
 
