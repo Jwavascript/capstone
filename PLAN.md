@@ -74,7 +74,7 @@ capstone/
 | 0 | 준비 | 첫 커밋, 결정 D0 · D2 확정, 검색 API 응답 확인 | GitHub · 네이버 개발자센터 | 진행 중 |
 | ex01 | OpenAPI 계약 | 화면이 바라는 API(폴더 포함)가 `openapi.yaml`로 고정 | — | 완료 (PASS 9/9, 2026-10-07) |
 | ex02 | Hono 구현 · Next.js 중계(BFF) | 화면이 가짜 데이터 대신 Next.js → Hono(메모리 샘플)로 동작 | — | 완료 (PASS 28/28, 2026-10-07) |
-| ex03 | Zod 입력 검사 | 잘못된 · 미래 날짜, 잘못된 북마크 · 폴더 요청을 거절 | — | 대기 |
+| ex03 | Zod 입력 검사 | 잘못된 · 미래 날짜, 잘못된 북마크 · 폴더 요청을 거절 | — | 완료 (PASS 38/38, 2026-10-07) |
 | ex04 | Vitest | 랭킹 규칙과 API 동작이 테스트로 고정 (M1) | — | 대기 |
 | ex05 | Supabase + Drizzle | 서버를 다시 켜도 랭킹 · 북마크 · 폴더 유지 | Supabase | 대기 |
 | ex06 | 네이버 검색 API 수집 | 명령 한 번으로 섹션별 그날 기사가 DB에 | 네이버 검색 API 키 | 대기 |
@@ -237,6 +237,10 @@ API (ex01에서 확정)
 - ex02: 화면의 "오늘"은 브라우저 지역 시간, 서버는 KST → 한국 밖 · 자정 근처에서 어긋날 수 있음. ex03에서 화면도 KST 기준으로 맞출지 정함
 - ex02: openapi.yaml 예시의 이슈 id(`pol-0`)가 실제 id 규칙(`{date}-{section}-{번호}`)과 다름 → ex04 정리 때 고침
 - ex02: `next dev`가 `AGENTS.md` · `next-env.d.ts`를, `next build`가 `tsconfig.tsbuildinfo`를 만듦 → 루트 `.gitignore`에 넣음. 검증표의 `it.sec` 검색은 `it.section`과 겹치니 낱말 경계로 씀
+- ex03: 같은 이름 폴더는 허용, 화면 "오늘"은 KST로 확정(PLAN 기본값)
+- ex03: zod `.max()`는 이모지 같은 서로게이트 쌍을 코드 포인트로 세서 `😀`×9(length 18)도 201. 화면 maxlength는 UTF-16 단위 → ex04에서 기준을 정해 테스트로 고정
+- ex03: `app.onError`가 400 예외를 모두 "요청 형식이 올바르지 않습니다"로 바꿈 → 뒤 단계에서 다른 400 예외가 생기면 문구 겹침 주의
+- ex03: 계약 `BookmarkCreate`에 issueId 패턴 · folderId minLength 없음, 예시 id(`it-1`)와 folders 400 description이 새 규칙과 어긋남 → ex04 계약 정리
 
 ## 11. 시연 점검표 (M3 뒤, 발표 전날 다시)
 
