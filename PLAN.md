@@ -76,7 +76,7 @@ capstone/
 | ex02 | Hono 구현 · Next.js 중계(BFF) | 화면이 가짜 데이터 대신 Next.js → Hono(메모리 샘플)로 동작 | — | 완료 (PASS 28/28, 2026-10-07) |
 | ex03 | Zod 입력 검사 | 잘못된 · 미래 날짜, 잘못된 북마크 · 폴더 요청을 거절 | — | 완료 (PASS 38/38, 2026-10-07) |
 | ex04 | Vitest | 랭킹 규칙과 API 동작이 테스트로 고정 (M1) | — | 완료 (PASS 24/24, 2026-10-07) · M1 달성 |
-| ex05 | Supabase + Drizzle | 서버를 다시 켜도 랭킹 · 북마크 · 폴더 유지 | Supabase | 대기 |
+| ex05 | Supabase + Drizzle | 서버를 다시 켜도 랭킹 · 북마크 · 폴더 유지 | Supabase | 완료 (PASS 37/37, 2026-10-07) |
 | ex06 | 네이버 검색 API 수집 | 명령 한 번으로 섹션별 그날 기사가 DB에 | 네이버 검색 API 키 | 대기 |
 | ex07 | 이슈 묶기 | 그날 기사가 이슈로 묶이고 연관기사 수가 생김 | — | 대기 |
 | ex08 | AI 3줄 요약 | Top 5 카드에 실제 요약 | Anthropic API 키 | 대기 |
@@ -244,7 +244,14 @@ API (ex01에서 확정)
 - ex04: 위 ex01~ex03 계약 메모(예시 id · IssueId · 섹션 짝 · folderId · folders 400)는 처리됨. 폴더 이름 글자 수는 코드 포인트 기준으로 확정(😀×16 통과 · ×17 거절), 순위 3번째 기준은 id 오름차순(PLAN 기본값)
 - ex04: `rankIssues`의 id 오름차순은 문자열 비교라 번호가 두 자리면 `-10`이 `-9`보다 앞 → 실제 이슈 id를 정하는 ex05 · ex07에서 확인
 - ex04: openapi의 date 설명("생략하면 가장 최근 수집일")과 지금 동작(KST 오늘)이 다름. 샘플에선 같지만 ex05에서 DB 기준으로 맞춤
-- ex04: Redocly 경고 15개는 `Section` oneOf 가지에 `required`가 없어서 남(가지마다 넣으면 사라짐). vitest는 `"type": "module"`이 없다는 경고만 남(동작 문제 없음)
+- ex04: Redocly 경고 15개는 `Section` oneOf 가지에 `required`가 없어서 남(가지마다 넣으면 사라짐, 지금 버전 기준 전체 경고는 19개). vitest는 `"type": "module"`이 없다는 경고만 남(동작 문제 없음)
+- ex05: D3(date 생략 = DB의 KST 오늘 이하 가장 최근 날짜) · D7(issue_id unique, ex11에서 (user_id, issue_id)) 적용. id 정렬은 자연 순서로 고침. 테스트는 저장소를 나눠 메모리 구현으로 유지(DB 구현은 검증표 서버 줄로만 확인)
+- ex05: `DATABASE_URL`은 Transaction pooler(6543) + `prepare: false`, drizzle-kit migrate도 6543에서 됨. Supabase 연결 문자열의 `[YOUR-PASSWORD]` 괄호가 남으면 인증 실패(28P01)이고 drizzle-kit은 메시지 없이 exit 1만 냄
+- ex05: `npm run seed`는 세 테이블을 모두 지우고 45일치를 다시 넣음 → ex06에서 실제 수집 데이터가 생기면 seed를 언제 쓸지(또는 범위) 정함
+- ex05: 날짜 · 섹션마다 후보가 딱 5개라 지금은 모두 Top 5. 후보가 5개를 넘으면(ex07) Top 5 밖 이슈의 북마크 저장(404) · 목록 카드(빈 칸)를 어떻게 할지 정함
+- ex05: 폴더를 동시에 두 번 만들면 id 충돌(500), 저장 시각이 같은 북마크는 순서 미정 → 지금은 영향 작음, ex11 계정별 저장 때 함께 봄
+- ex05: Next.js도 `ex05/.env`를 읽음 → 비밀값을 `NEXT_PUBLIC_` 이름으로 두지 않음
+- ex05: 심사 중 `DATABASE_URL`이 에이전트 명령 출력에 한 번 노출됨(파일엔 없음) → Supabase DB 비밀번호 교체 권장. 에이전트는 `.env`를 읽는 스크립트에서 값이 오류 메시지로 새지 않게 주의
 
 ## 11. 시연 점검표 (M3 뒤, 발표 전날 다시)
 
