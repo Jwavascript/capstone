@@ -1,0 +1,396 @@
+{
+  "status": "success",
+  "totalResults": 249,
+  "results": [
+    {
+      "article_id": "13a6d6f50574c10e515e9ef878b5a211",
+      "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008785888",
+      "title": "누리호, 오늘 다시 우주로…위성 15기 실었다",
+      "description": "한국형 발사체 누리호가 오늘 낮에 있을 5번째 발사를 앞두고 있습니다. 역대 가장 많은 15기의 위성이 실렸습니다.오늘 첫 소식, 서동균 기자입…",
+      "keywords": [
+        "아파트",
+        "sbs 뉴스",
+        "위성",
+        "외교 안보",
+        "일반기사",
+        "0시 35분",
+        "7시 30분",
+        "15기",
+        "모닝와이드 1부",
+        "누리호",
+        "한반도",
+        "발사",
+        "사회"
+      ],
+      "creator": [
+        "서동균"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 21:11:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 21:36:22",
+      "image_url": "https://img.sbs.co.kr/newimg/news/20261007/202229118.jpg",
+      "video_url": null,
+      "source_id": "sbs_ko",
+      "source_name": "Sbs 뉴스",
+      "source_priority": 37166,
+      "source_url": "https://news.sbs.co.kr",
+      "source_icon": "https://i.newsdata.io/sbs_ko.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "9f0fd5a73f4ab266e9dd59e5e43f515a",
+      "link": "https://news.kbs.co.kr/news/view.do?ncd=8679293",
+      "title": "‘최다 위성’ 실은 누리호, 오늘 우주로",
+      "description": "[앵커] 한국형 발사체 누리호가 오늘 다섯 번째 우주 비행에 나섭니다. 누리호는 오늘 오전 최종 점검과 추...",
+      "keywords": [
+        "누리호|5차발사|고흥|나로우주센터"
+      ],
+      "creator": [
+        "전동흔 기자 east co kr 전동흔 기자의 기사 모음"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "technology",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 21:09:57",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 21:34:19",
+      "image_url": "https://news.kbs.co.kr/data/news/2026/10/07/20261007_1GBLkx.jpg",
+      "video_url": null,
+      "source_id": "kbs_kr",
+      "source_name": "Kbs 뉴스",
+      "source_priority": 14532,
+      "source_url": "https://news.kbs.co.kr",
+      "source_icon": "https://i.newsdata.io/kbs_kr.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "675ecef8ad027e09992f7b5b4c0e71f8",
+      "link": "http://www.newspim.com/news/view/20261006001513",
+      "title": "[누리호 발사] 누리호, 오늘 낮 5차 발사…군집위성 5기 투입",
+      "description": "[세종=뉴스핌] 이경태 기자 = 한국형 발사체 누리호가 7일 낮 다섯 번째 우주 비행에 나선다. 4차 때와 달리 민간 기업 인력이 발사통제 콘솔 상당수를 직접 운용하고, 같은 임무를 수행하는 위성 5기를 순차적으로 궤도에 올리는 국내 최초의 군집위성 발사다. 우주항공청(우주청)과 한국항공우주연구원(항우연)에 따르면 누리호 5호기는 이날 전남 고흥 나로우주센터 제2발사대에서 발사된다. 발사 가능 시간대는 낮 12시23분부터 오후 1시23분까...",
+      "keywords": [
+        "101040"
+      ],
+      "creator": [
+        "이경태 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "business"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 21:00:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 21:17:44",
+      "image_url": "https://img.newspim.com/news/2026/10/06/261006130336168.jpg",
+      "video_url": null,
+      "source_id": "newspim",
+      "source_name": "뉴스핌",
+      "source_priority": 472748,
+      "source_url": "https://www.newspim.com",
+      "source_icon": "https://i.newsdata.io/newspim.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "5a329bc1ba048dfe78a7c6046d4acf3d",
+      "link": "https://www.newsis.com/view/NISX20261006_0003816009",
+      "title": "누리호, 오늘 다섯번째 우주 비행…\"위성 15기 우주 배달 나선다\"",
+      "description": "[서울=뉴시스]윤현성 기자 = 한국형발사체 '누리호'가 7일 다섯 번째 우주 비행에 나선다. 이번에는 역대 가장 많은 15기의 위성을 싣고 국내 첫 군집위성 배치 임무에 도전한다. 누리호 반복 발사로 신뢰성을 쌓는 동시에 민간의 발사운용 참여 범위도 한층 넓어진다. 우주항공청과 한국항공우주연구원에 따르면 누리호 5호기는 이날 전남 고흥 나로우주센터 제2발사대에서 발사될 예정이다. 5번째 누리호의 발사 가능 시간대는 낮 12시23분부터 오후 1시23분까지다. 상황별 계획에는 낮 12시25분이 잠정 발사시각으로 잡혀 있지만 최종 시각은 이날 오전 발사관리위원회가 발사체 상태와 기상, 우주환경 등을 종합 검토한 뒤 확정한다. 전날인 6일 누리호는 발사체종합조립동에서 제2발사대로 옮겨져 오전 10시35분 기립·고정 작업을 마쳤다. 이후 전원과 추진제를 공급하기 위한 엄빌리칼을 연결하고 연료·산화제 유공압라인 기밀시험, 항전장비 기능점검 등 발사대 설치 작업을 진행했다. 특히 5차 발사는 2022~2028년 한국형발사체 고도화 사업에서 추진하는 다섯 차례 반복 발사 가운데 세 번째다. 2021년 1차 발사는 위성모사체의 궤도 투입에 실패했지만 2022년 2차 발사에서 개발 성공을 확인했고, 2023년 3차와 지난해 4차 발사까지 연이어 임무에 성공했다. 이미 확보한 설계를 반복 제작·운용하면서 비행 데이터를 축적해 신뢰성을 높이는 것이 이번 발사의 또 다른 목표다. ◆추진제 채우고 10분 전부터 자동운용…이륙 뒤 575㎞까지 발사 당일에는 발사운용 최종점검과 헬륨 충전 등을 거쳐 실제 비행 준비에 들어간다. 발사 약 4시간 전부터 극저온 액체산소 공급라인과 탱크를 냉각하고 연료인 케로신과 액체산소를 채운다. 추진제 충전이 끝나면 발사체 기립장치를 철수하고 관성항법유도시스템을 정렬한 뒤 최종 발사 여부를 판단한다. 발사 10분 전부터는 발사자동운용(PLO)이 시작된다. 이후 1단 엔진 4기의 총추력이 300톤에 도달하면 발사체 고정장치가 풀리면서 누리호가 발사대를 떠난다. 누리호는 이륙 123초 뒤 고도 67㎞에서 1단을 분리하고, 233초 뒤 고도 224㎞에서 위성을 보호하던 페어링을 떼어낸다. 268초 뒤 고도 277㎞에서 2단을 분리한 뒤 3단 엔진으로 목표 궤도를 향한다. 이륙 761초 뒤 고도 575㎞에서 3단 엔진 연소가 종료될 예정이다. ◆15기 위성 10차례 걸쳐 분리…첫 군집위성 '정밀배송' 이번 5차 발사의 핵심은 위성 투입이다. 주탑재위성인 초소형군집위성 '네온샛' 2~6호 5기와 큐브위성 10기 등 총 15기가 실렸다. 위성부 전체 중량은 약 1071㎏으로 4차 발사 당시 약 960㎏보다 늘었다. 첫 네온샛 2호는 이륙 810초 뒤 고도 575㎞에서 분리된다. 이후 네온샛 3~6호를 35~40초 간격으로 한 기씩 차례로 떼어낸다. 이어 큐브위성은 10초 간격으로 두 기씩 총 다섯 차례 사출한다. 마지막 큐브위성 2기는 이륙 1035초 뒤 분리되고, 1185초 뒤 오토파일럿이 종료되면 계획된 비행 시퀀스가 끝난다. 이번 발사는 동일 임무를 수행하는 네온샛 5기를 한꺼번에 배치하는 국내 첫 군집위성 발사 임무이기도 하다. 위성 간 충돌을 막기 위해 누리호 상단의 자세를 제어해 서로 다른 방향으로 분리하고, 모든 위성을 내보낸 뒤에는 상단과 위성 간 충돌을 피하기 위한 기동도 수행한다. 민간의 역할도 커졌다. 한화에어로스페이스는 5호기 제작을 총괄했고 발사통제센터(LCC) 22개 콘솔 가운데 20개에 인력 23명이 참여한다. 이 가운데 18명은 콘솔을 직접 운용한다. 발사운용 전체는 여전히 항우연이 주관하지만 향후 민간 주도 발사를 위한 기술과 경험을 현장에서 축적하는 단계다. 마지막 변수는 기상과 우주환경이다. 지상풍과 고층풍, 낙뢰 가능성이 있는 구름뿐 아니라 누리호 비행 궤도 주변의 우주물체 충돌 가능성, 태양흑점폭발·태양입자유입·지자기교란 등도 발사 여부를 가른다. 모든 조건이 맞아떨어져야 누리호의 다섯 번째 카운트다운이 시작된다. 누리호의 비행이 계획대로 끝나면 우주청은 낮 12시50분께 비행 종료를 알리고, 오후 1시5분 임무지휘센터(MDC) 현장 상황을 공개할 계획이다. 오후 2시에는 5차 발사 상세 결과와 일부 위성 교신 결과를 브리핑하고, 오후 4시30분께 네온샛 2~6호의 초기 교신 결과를 발표할 예정이다. ◎공감언론 뉴시스 hsyhs@newsis.com",
+      "keywords": null,
+      "creator": [
+        "윤현성 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "technology",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 21:00:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 21:11:21",
+      "image_url": "https://img1.newsis.com/2026/10/06/NISI20261006_0002256289_web.jpg",
+      "video_url": null,
+      "source_id": "newsis",
+      "source_name": "뉴시스",
+      "source_priority": 63947,
+      "source_url": "https://newsis.com",
+      "source_icon": "https://i.newsdata.io/newsis.jpg",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "ef70a9d4bc9e31729f84d1e0bcb89d04",
+      "link": "https://www.etoday.co.kr/news/view/2633057",
+      "title": "누리호 오늘 낮 5차 발사...역대 최다 '15기' 위성 싣고 우주로",
+      "description": "한국형발사체 누리호(5호기)가 역대 가장 많은 위성을 싣고 7일 우주로 향한다. 우주항공청은 이날 오전 8시 '누리호 발사관...",
+      "keywords": [
+        "it"
+      ],
+      "creator": [
+        "김동효"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "technology",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 21:00:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 21:21:46",
+      "image_url": "https://img.etoday.co.kr/pto_db/2026/10/20261007012039_2397946_600_400.jpg",
+      "video_url": null,
+      "source_id": "etoday",
+      "source_name": "이투데이",
+      "source_priority": 1197639,
+      "source_url": "https://www.etoday.co.kr",
+      "source_icon": "https://i.newsdata.io/etoday.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "0697e01896fc4863b2737374a1c36704",
+      "link": "https://www.fnnews.com/news/202610051322522572",
+      "title": "오늘 누리호 5차 발사...첫 군집위성 발사 도전",
+      "description": "[파이낸셜뉴스] 한국형발사체 누리호가 10월7일 5차 발사에 나선다. 국내 처음으로 군집위성 발사에 도전한다. 한반도 정밀 감시 체계를 구축하기 위한 첫 발이 될 전망이다. ■ 15기 최다 탑재...정밀감시체계 구축 나서 7일 우주항공청과 한국항공우주연구원에 따르면 누리호는 지난 5일 총조립을 완료하고 6일 발사대로 이동해 7일 낮 12시 25분 전후 발사할 예정이다. 지난해 11월 4차 발사에 이어 5차 발사도 전남 고흥 나로우주센터에서 진행된다. 이번 5차 발사에는 주탑재위성으로 초소형군집위성인 네온샛 5기가 실린다. 네온샛은 실시간 정밀 감시체계를 구축하는 위성으로 국가 안보와 재난 대응 역할을 한다. 이번 5기 발사에 이어 내년 누리호 6차 발사에서 나머지 5기 발사가 예정돼 있다. 이들 10기가 모두 발사를 완료하면, 한반도",
+      "keywords": [
+        "의학·과학|과학"
+      ],
+      "creator": [
+        "연지안"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "technology",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 21:00:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 21:20:39",
+      "image_url": "https://image.fnnews.com/resource/media/image/2026/10/06/202610061205454630_e.jpg",
+      "video_url": null,
+      "source_id": "fnnews",
+      "source_name": "파이낸셜뉴스",
+      "source_priority": 879783,
+      "source_url": "https://www.fnnews.com",
+      "source_icon": "https://i.newsdata.io/fnnews.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "182e433a68caf1dc61647e56b992da2e",
+      "link": "https://www.yonhapnewstv.co.kr/news/MYH20261007055604gd1",
+      "title": "누리호, 발사 준비 끝…오늘 우주로 간다",
+      "description": "[앵커] 다섯 번째 비행을 앞두고, 누리호가 본격 발사 준비에 나섰습니다. 이송과 기립까지 마친 누리호는 발사대와의 연결 작업까지 순조롭게 끝냈는데요. 이상이 없다면 오늘(7일) 낮, 우주로 향할 전망입니다. 임하경 기자입니다. [기자] 총조립을 마친 누리호가 조립동에서 모습을 드러냅니다. 무인 특수이동차량에 실린 누리호, 천천히 조립동을 빠져나옵니다. 발사대까지 거리는 1.8km. 진동과 충격을 최소화하기 위해 사람이 걷는 속도보다 더 ...",
+      "keywords": [
+        "헤드라인"
+      ],
+      "creator": [
+        "임하경"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "technology",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 20:56:06",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 21:14:26",
+      "image_url": "https://media.yonhapnewstv.co.kr/article/MYH/20261006/MYH20261007055604gd1.jpg",
+      "video_url": null,
+      "source_id": "yonhapnewstv",
+      "source_name": "연합뉴스tv",
+      "source_priority": 169104,
+      "source_url": "https://yonhapnewstv.co.kr",
+      "source_icon": "https://i.newsdata.io/yonhapnewstv.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "a3ced691bdca6617605b257015549ca9",
+      "link": "https://www.edaily.co.kr/News/Read?newsId=01669526645610624",
+      "title": "완연한 가을 아침에 '기온 뚝'…'누리호 발사' 고흥 \"맑고 쾌청\"[오늘날...",
+      "description": "수요일인 7일은 전국 하늘이 대체로 맑고 출근길 기온은 쌀쌀하겠다. 일부 지역의 아침 최저기온은 3도까지 떨어질 전망이다.완연한 가을날씨를 보인 지난 5일 서울 마포구 하늘공원을 찾은 시민들이 억새밭을 산책하며 가을의 정취를 느끼고 있다.(사진=방인권 기자)6일 기상청에 따르면 7일 아침 최저기온은 3~14도로 평년(최저 8~16도)보다 낮겠다. 이후에는...",
+      "keywords": [
+        "사회일반"
+      ],
+      "creator": [
+        "염정인"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "environment",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 20:00:07",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 20:06:19",
+      "image_url": "https://image.edaily.co.kr/images/Photo/files/NP/S/2026/10/PS26100700053.jpg",
+      "video_url": null,
+      "source_id": "edaily",
+      "source_name": "Edaily",
+      "source_priority": 26417,
+      "source_url": "https://www.edaily.co.kr",
+      "source_icon": "https://i.newsdata.io/edaily.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "48313c566f1d2c37895947a87778aaaf",
+      "link": "https://www.news1.kr/local/daejeon-chungnam/6311912",
+      "title": "[오늘의 주요일정] 대전·충남(7일, 수)",
+      "description": "◇대전시 -허태정 시장 09:30 누리호 5차 발사 대전샛 1호 탑재 참관(나로우주센터)◇대전교육청 -오석진 교육감10:30 교육감 취임 100일 기자회견(교육청 …",
+      "keywords": null,
+      "creator": [
+        "뉴스1"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "sports",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 20:00:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 20:05:07",
+      "image_url": "https://i3n.news1.kr/system/photos/2026/10/6/8145248/high.jpg",
+      "video_url": null,
+      "source_id": "news1_kr",
+      "source_name": "뉴스1",
+      "source_priority": 15541,
+      "source_url": "https://www.news1.kr",
+      "source_icon": "https://i.newsdata.io/news1_kr.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "42606bf1e185b9ac6bb814f741c40a8d",
+      "link": "https://www.news1.kr/it-science/general-science/6311791",
+      "title": "누리호 오늘 5번째 비행…군집위성 5기 싣고 '우주 수송' 시험대",
+      "description": "낮 12시23분~오후 1시23분 발사…오전 최종 시각 결정 첫 복수 주탑재위성 임무…자세 바꿔가며 5기 충돌 없이 분리 한국형 발사체 누리호가 7일 다섯 번째 우주 비행에 나선다. 이번에는 여러 기의 주탑재위성을 한꺼번에 목표 궤도에 내려놓는 고난도 임무에 도전한다. 위성을 우주로 …",
+      "keywords": [
+        "우주항공청",
+        "누리호",
+        "한국항공우주연구원"
+      ],
+      "creator": [
+        "나연준 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "crime",
+        "technology",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 20:00:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 20:05:07",
+      "image_url": "https://i3n.news1.kr/system/photos/2026/10/6/8144261/high.jpg",
+      "video_url": null,
+      "source_id": "news1_kr",
+      "source_name": "뉴스1",
+      "source_priority": 15541,
+      "source_url": "https://www.news1.kr",
+      "source_icon": "https://i.newsdata.io/news1_kr.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    }
+  ],
+  "nextPage": "NEXT_PAGE_TOKEN"
+}

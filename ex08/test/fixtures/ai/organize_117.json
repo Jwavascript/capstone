@@ -1,0 +1,1248 @@
+{
+  "issues": [
+    {
+      "section": "cul",
+      "articles": [
+        "a000",
+        "a001",
+        "a002",
+        "a003"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "김지원"
+        ],
+        [
+          "유퀴즈",
+          "미담"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a022",
+        "a116"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "마이크론"
+        ],
+        [
+          "파업",
+          "노조"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a108",
+        "a114"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "국채금리",
+          "장기금리",
+          "국채 금리"
+        ],
+        [
+          "미국"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a038",
+        "a039",
+        "a040",
+        "a048",
+        "a099",
+        "a107"
+      ],
+      "importance": 4,
+      "terms": [
+        [
+          "노벨화학상"
+        ],
+        [
+          "소아이",
+          "카강"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a041",
+        "a042"
+      ],
+      "importance": 5,
+      "terms": [
+        [
+          "누리호"
+        ],
+        [
+          "발사"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a061",
+        "a072"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "병역특례"
+        ],
+        [
+          "폐지"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a070",
+        "a077",
+        "a078"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "을지로3가역"
+        ],
+        [
+          "불"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a057",
+        "a058"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "여고생"
+        ],
+        [
+          "장윤기"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a013",
+        "a069",
+        "a076"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "인구감소"
+        ],
+        [
+          "지정"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a079",
+        "a080"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "김병기"
+        ],
+        [
+          "수사"
+        ]
+      ]
+    },
+    {
+      "section": "cul",
+      "articles": [
+        "a004"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "고레에다"
+        ],
+        [
+          "룩백"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a010"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "국감"
+        ],
+        [
+          "여야"
+        ]
+      ]
+    },
+    {
+      "section": "cul",
+      "articles": [
+        "a011"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "서인영"
+        ],
+        [
+          "괴롭힘"
+        ]
+      ]
+    },
+    {
+      "section": "cul",
+      "articles": [
+        "a012"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "데이식스"
+        ],
+        [
+          "하차"
+        ]
+      ]
+    },
+    {
+      "section": "cul",
+      "articles": [
+        "a015"
+      ],
+      "importance": 1,
+      "terms": [
+        [
+          "포항"
+        ],
+        [
+          "가을장미페스타"
+        ]
+      ]
+    },
+    {
+      "section": "cul",
+      "articles": [
+        "a016"
+      ],
+      "importance": 1,
+      "terms": [
+        [
+          "김천시"
+        ],
+        [
+          "농촌체험페스티벌"
+        ]
+      ]
+    },
+    {
+      "section": "cul",
+      "articles": [
+        "a018"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "하현승"
+        ],
+        [
+          "양키스"
+        ]
+      ]
+    },
+    {
+      "section": "cul",
+      "articles": [
+        "a019"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "김소영"
+        ],
+        [
+          "오상진"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a020"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "부동산"
+        ],
+        [
+          "불법사찰"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a021"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "청와대"
+        ],
+        [
+          "오세훈"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a027"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "제주"
+        ],
+        [
+          "영국"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a029"
+      ],
+      "importance": 1,
+      "terms": [
+        [
+          "패트롤"
+        ],
+        [
+          "전남광주시"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a030"
+      ],
+      "importance": 1,
+      "terms": [
+        [
+          "패트롤"
+        ],
+        [
+          "장성군"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a031"
+      ],
+      "importance": 1,
+      "terms": [
+        [
+          "육동한"
+        ],
+        [
+          "춘천시장"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a032"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "브룩필드"
+        ],
+        [
+          "ESR"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a033"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "국민참여성장펀드"
+        ],
+        [
+          "닷새"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a034"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "인도"
+        ],
+        [
+          "가계"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a036"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "도이체방크"
+        ],
+        [
+          "솔라엣지"
+        ]
+      ]
+    },
+    {
+      "section": "eco",
+      "articles": [
+        "a037"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "워딩턴"
+        ],
+        [
+          "스틸"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a044"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "리사"
+        ],
+        [
+          "전영현"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a046"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "레어 어스 아메리카스"
+        ],
+        [
+          "콘스텔레이션"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a047"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "인텔"
+        ],
+        [
+          "테라팹"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a051"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "볼라투스"
+        ],
+        [
+          "에어로스페이스"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a052"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "하이브리드차"
+        ],
+        [
+          "EU"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a053"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "대구보훈병원"
+        ],
+        [
+          "AI"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a054"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "AI"
+        ],
+        [
+          "제도"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a055"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "건설소식"
+        ],
+        [
+          "롯데건설"
+        ]
+      ]
+    },
+    {
+      "section": "it",
+      "articles": [
+        "a056"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "하동"
+        ],
+        [
+          "말차"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a059"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "한동훈"
+        ],
+        [
+          "국정원장"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a060"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "이화영"
+        ],
+        [
+          "가석방"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a062"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "전몰군경"
+        ],
+        [
+          "수당"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a063"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "민주당"
+        ],
+        [
+          "경기도당"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a064"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "SNS"
+        ],
+        [
+          "소통"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a065"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "우크라이나"
+        ],
+        [
+          "경유"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a066"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "정봉주"
+        ],
+        [
+          "검증"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a067"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "부안"
+        ],
+        [
+          "어선"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a068"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "공수처"
+        ],
+        [
+          "이화영"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a071"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "사직야구장"
+        ],
+        [
+          "재건축"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a073"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "경남"
+        ],
+        [
+          "농지"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a074"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "국민의힘"
+        ],
+        [
+          "조희대"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a075"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "이광철"
+        ],
+        [
+          "창원FC"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a081"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "형사팀장"
+        ],
+        [
+          "기소"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a083"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "조두순"
+        ],
+        [
+          "전자감독장치"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a084"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "국교위"
+        ],
+        [
+          "중장기"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a086"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "돌려차기"
+        ],
+        [
+          "구형"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a087"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "여명학교"
+        ],
+        [
+          "건립"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a088"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "추미애"
+        ],
+        [
+          "소나무재선충병"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a089"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "나주"
+        ],
+        [
+          "살해"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a090"
+      ],
+      "importance": 1,
+      "terms": [
+        [
+          "영진전문대"
+        ],
+        [
+          "YBM"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a091"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "3명 살리고"
+        ],
+        [
+          "엄마"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a092"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "김해"
+        ],
+        [
+          "강일병원"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a093"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "지뢰"
+        ],
+        [
+          "유엔사"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a094"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "남해고속도로"
+        ],
+        [
+          "추돌"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a095"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "강원도교육청"
+        ],
+        [
+          "수능"
+        ]
+      ]
+    },
+    {
+      "section": "soc",
+      "articles": [
+        "a096"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "진드기"
+        ],
+        [
+          "감염병"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a097"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "중국"
+        ],
+        [
+          "인재"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a098"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "중국"
+        ],
+        [
+          "AWS"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a100"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "일본"
+        ],
+        [
+          "태극기"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a101"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "호주"
+        ],
+        [
+          "비자"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a102"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "후티"
+        ],
+        [
+          "예멘"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a103"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "WHO"
+        ],
+        [
+          "중국"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a104"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "호르무즈"
+        ],
+        [
+          "선장"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a105"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "김치"
+        ],
+        [
+          "뉴욕산"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a106"
+      ],
+      "importance": 4,
+      "terms": [
+        [
+          "트럼프"
+        ],
+        [
+          "경유"
+        ]
+      ]
+    },
+    {
+      "section": "pol",
+      "articles": [
+        "a109"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "경기도의회"
+        ],
+        [
+          "민주당"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a110"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "GH"
+        ],
+        [
+          "베이스캠프"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a111"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "흑사병"
+        ],
+        [
+          "푸틴"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a112"
+      ],
+      "importance": 1,
+      "terms": [
+        [
+          "초등학생들"
+        ],
+        [
+          "수원시의회서"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a113"
+      ],
+      "importance": 3,
+      "terms": [
+        [
+          "중국"
+        ],
+        [
+          "다카이치"
+        ]
+      ]
+    },
+    {
+      "section": "wor",
+      "articles": [
+        "a115"
+      ],
+      "importance": 2,
+      "terms": [
+        [
+          "가스공사"
+        ],
+        [
+          "CEO"
+        ]
+      ]
+    }
+  ],
+  "excluded": [
+    "a005",
+    "a006",
+    "a007",
+    "a008",
+    "a009",
+    "a014",
+    "a017",
+    "a023",
+    "a024",
+    "a025",
+    "a026",
+    "a028",
+    "a035",
+    "a043",
+    "a045",
+    "a049",
+    "a050",
+    "a082",
+    "a085"
+  ]
+}

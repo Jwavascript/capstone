@@ -35,7 +35,7 @@
 | DB | Supabase Postgres + Drizzle | ex05 |
 | 수집 | newsdata.io 뉴스 API(무료 플랜, D0 · D12) | ex06 |
 | 이슈 묶기 · 연관기사 수 | 제목 유사도 규칙(D11) · 키워드 검색 `totalResults`(D13) | ex07 |
-| AI 요약 | Claude API(`@anthropic-ai/sdk`) | ex08 |
+| AI 이슈 정리 · 요약 | Claude API(`@anthropic-ai/sdk`, D6 · D15) | ex08 |
 | 자동 실행 | GitHub Actions 예약 실행 | ex09 |
 | 로그인 | Better Auth(이메일 + 비밀번호) | ex10 |
 
@@ -80,7 +80,7 @@ capstone/
 | ex05 | Supabase + Drizzle | 서버를 다시 켜도 랭킹 · 북마크 · 폴더 유지 | Supabase | 완료 (PASS 37/37, 2026-10-07) |
 | ex06 | newsdata.io 수집 | 명령 한 번으로 섹션별 최신 기사가 DB에(실패 섹션은 기록하고 나머지는 저장) | newsdata.io 키 | 완료 (PASS 33/33, 2026-10-07) |
 | ex07 | 이슈 묶기 · 연관기사 수 | 수집한 기사가 이슈로 묶이고, 키워드 검색으로 연관기사 수가 생겨 화면이 실제 이슈로 바뀜 | newsdata.io 키 | 완료(2차 PASS 31/31, 2026-10-08) |
-| ex08 | AI 3줄 요약 | Top 5 카드에 실제 요약 | Anthropic API 키 | 대기 |
+| ex08 | AI 이슈 정리 · 3줄 요약 | AI가 그날 기사를 사건별로 묶고 섹션 · 검색어를 정해 순위가 그럴듯해지고, Top 5 카드에 실제 요약 | Anthropic API 키 · 결제 | 대기 |
 | ex09 | 하루 1회 자동 실행 | 매일 저절로 수집 · 묶기 · 요약, 날짜별 데이터가 쌓임 (M2) | GitHub Secrets | 대기 |
 | ex10 | Better Auth 로그인 | 가입 · 로그인 · 로그아웃 | — | 대기 |
 | ex11 | 북마크 · 폴더 계정별 저장 | 내 북마크 · 폴더만 보이고 비로그인은 막힘 (M3) | — | 대기 |
@@ -105,7 +105,7 @@ capstone/
 | ex05 | drizzle-orm · postgres · drizzle-kit | 샘플은 seed 명령으로 DB에. `DATABASE_URL`은 Supabase 연결 풀러 주소. 마이그레이션 파일도 커밋 |
 | ex06 | 없음(Node 내장 fetch) | 요청 규칙은 D12와 10절 "0단계 newsdata.io" 메모 그대로. 응답 fixture는 `research/newsdata/*.json`을 `test/fixtures/`로 복사해 씀(테스트는 네트워크 없이). 섹션당 최대 페이지(기본 3)를 명령 옵션으로 줄일 수 있게(확인용 1). 기사 날짜 칸은 수집한 날(KST, D3), 발행 시각은 UTC를 바꿔 저장. 같은 날 다시 수집하면 성공한 섹션만 그날 기사를 바꾸고, 실패한 섹션은 이전 기사를 그대로 둠(AC-01-2). seed는 `articles` · `collect_runs`를 지우지 않음. 랭킹 화면은 아직 샘플 이슈(묶기는 ex07) |
 | ex07 | 없음 | 묶기 기준(D11)과 기준값을 PLAN 표로. 연관기사 수는 D13(섹션당 후보 6개만 키워드 검색, 실패면 묶음 크기). 키워드 뽑는 규칙(예: 묶음 제목들에 함께 나온 2글자 이상 낱말)을 PLAN 표로, `q`는 URL 인코딩. 같은 날 다시 묶어도 대표 기사가 같은 이슈는 id 유지. 대표 기사 기준을 PLAN에서 정함. 랭킹 `updatedAt`을 실제 수집 시각으로. seed와 실제 이슈가 섞이지 않게 정함. 검색 응답 fixture(`research/newsdata/latest_kr_ko_q_nuri.json`)로 테스트 |
-| ex08 | @anthropic-ai/sdk | 요약 없는 Top 5만. 입력은 묶인 기사의 제목 · 설명문. 실패 · 거절(refusal)은 null. 3줄은 구조화 출력으로 받음. PLAN · 제작 때 Claude Code `claude-api` 스킬로 최신 사용법 확인 |
+| ex08 | @anthropic-ai/sdk | AI 이슈 정리(D15): 그날 기사 제목 전체를 한 번에 보내 구조화 출력(묶음 · 섹션 · 이슈 아님 · 검색어)으로 받고, 실패하면 D11 규칙으로. 연관기사 수는 D13 검색 · 검증 그대로(검색어만 AI). 요약은 요약 없는 Top 5만. 입력은 묶인 기사의 제목 · 설명문. 실패 · 거절(refusal)은 null. 3줄은 구조화 출력으로 받음. PLAN · 제작 때 Claude Code `claude-api` 스킬로 최신 사용법 확인 |
 | ex09 | 없음 | cron은 UTC: `0 21 * * *` = 06:00 KST. 키는 GitHub Secrets. 이후 단계마다 워크플로의 폴더를 최신 exXX로 바꿈 |
 | ex10 | better-auth | 화면에 번들러가 없으니 fetch로 `/api/auth/*` 호출. Better Auth 테이블은 CLI로 Drizzle 스키마에 더함 |
 | ex11 | 없음 | 계약에 401 추가. 사용자 없이 저장된 기존 북마크 · 폴더 처리는 확인받음. 과거 날짜 카드도 같은 북마크(AC-09-5) |
@@ -137,7 +137,7 @@ capstone/
 | D3 | 날짜 기준 | KST. 수집은 매일 06:00. 랭킹 날짜 = 수집한 날(KST). newsdata.io 무료 플랜은 약 12시간 늦어서 06:00 수집분은 주로 전날 오후~저녁 기사. date 없이 부르면 가장 최근 수집일을 돌려주고, 화면 첫 진입은 그 날짜 | ex01 전(12시간 지연은 2026-10-07 추가) | 제안 |
 | D4 | 언어 · 런타임 | TypeScript, Node 20 이상(현재 PC는 24), `npm run build` = `next build` + Hono 서버 타입 검사(`tsc --noEmit`) | ex02 전 | 제안 |
 | D5 | 자동 실행 | GitHub Actions 예약 실행. 서버가 꺼져 있어도 돎 | ex09 PLAN 전 | 제안 |
-| D6 | AI 요약 | 모델은 `claude-opus-5-5`(기본값. 더 싼 모델로 바꿀지는 사용자 결정). 입력은 묶인 기사의 제목 · 설명문만 | ex08 PLAN 전 | 제안 |
+| D6 | AI 요약 · 정리 모델 | 비용 최소화(사용자 결정 2026-10-08): 구조화 출력을 지원하는 가장 싼 모델 `claude-haiku-4-5-20251001`을 이슈 정리(D15) · 요약 모두에 씀(effort · thinking 없음). 하루 최대 약 $0.15(정리 1 + 요약 30). 입력은 묶인 기사의 제목 · 설명문만. 거절 시 다른 모델 재시도(`fallbacks`)는 하지 않음 | 2026-10-08 | 확정 |
 | D7 | 북마크 대상 | 날짜별 이슈 한 건(issueId) + 폴더(folderId). 카드 정보는 이슈에서 가져옴 | ex01 전 | 제안 |
 | D8 | 수집 실패 섹션(AC-01-2) | 행을 복사하지 않고, 조회 때 그 섹션만 직전 성공 날짜의 결과를 돌려줌 | ex06 PLAN 전 | 제안 |
 | D9 | 로그인 방식 | 이메일 + 비밀번호. Google 로그인은 SPEC 밖 | ex10 PLAN 전 | 제안 |
@@ -145,6 +145,7 @@ capstone/
 | D11 | 이슈 묶기 기준 | AI 없이 제목 낱말 규칙으로 묶음(결과가 매번 같고 테스트 가능, 비용 없음). **고침(2026-10-08)**: ① 줄줄이 잇기 금지 — 기사는 묶음의 대표 제목과 공통 낱말이 2개 이상일 때만 그 묶음에 들어감(A~B · B~C여도 A~C가 아니면 따로) ② 조사를 떼지 않고 "앞부분 일치"로 같은 낱말 판정(한쪽이 다른 쪽으로 시작하고 짧은 쪽 2글자 이상: `노벨화학상에` = `노벨화학상`, `소아이`는 그대로) ③ 불용어 확대(정부 · 대통령 · 주가 · 상승 · 하락 · 이유 등) + 그날 여러 섹션 제목에 흔한 낱말은 공통 낱말로 안 셈 ④ 한자 약칭(中 · 美 · 日)은 묶기에 쓰지 않음. 같은 섹션 안에서만. 기준값 · 불용어 목록은 `research/newsdata/titles_2026-10-08.json`(실제 117건)으로 맞춰 ex07 PLAN에 적음 | ex07 PLAN 전 · 고침 2026-10-08 | 확정 |
 | D12 | 섹션 판정 | 섹션마다 newsdata.io `category`를 묶어 요청하고(`country=kr` · `language=ko` · `prioritydomain=top` · `removeduplicate=1`), 요청한 섹션을 그 기사의 섹션으로 씀. pol=politics · eco=business · soc=domestic,crime,education · cul=lifestyle,entertainment,health,food,tourism · wor=world · it=technology,science. 같은 링크가 두 섹션에 오면 pol→eco→soc→cul→wor→it 순서에서 먼저 받은 섹션 하나만. **출처 섞기(2026-10-08 확정)**: top만 받으면 출처가 조선일보 계열 · investing_kr뿐이라(ex06 실제 60건), 섹션마다 `prioritydomain=top` 1페이지 + prioritydomain 없는 전체 출처 페이지를 함께 받음(하루 크레딧은 지금과 비슷하게). ex07에서 수집 보완으로 반영 | ex06 PLAN 전 · 출처 섞기는 ex07 | 제안 · 출처 섞기 확정 |
 | D13 | 연관기사 수 | 이슈의 대표 낱말 2개를 **제목에서만** 검색(`qInTitle=낱말1 AND 낱말2`, 최근 48시간, `country=kr` · `language=ko`, prioritydomain 없이 전체 출처)하고 **1쪽 결과로 검증**: p = 1쪽 제목 중 검색어 말고도 묶음 낱말을 1개 이상 공유하는 비율 → 연관기사 수 = max(round(`totalResults` × p), 묶음 크기). 대표 낱말이 2개 미만이면 검색 안 함. 크레딧 때문에 섹션마다 묶음 크기 상위 6개 후보만 검색하고 그중 Top 5. 검색 실패 · 크레딧 부족이면 묶음 크기. 이유: `q` 한 낱말은 제목 · 메타 키워드까지 찾아 무관한 기사까지 셈(`q=ai` 7,121건, 1쪽 관련 0) | ex07 PLAN 전 · 고침 2026-10-08 | 확정(실험: `research/newsdata/q_vs_qintitle_2026-10-08.json`) |
+| D15 | AI 이슈 정리 | ex07 규칙으로는 뜻 판단이 안 됨(10절 ex07 2차 메모 ②~④) → 하루 한 번 그날 기사(제목 · 설명문 앞부분)를 Claude에 보내 구조화 출력으로 ① 같은 사건 묶음(섹션을 넘어도 됨) ② 묶음의 섹션(pol · eco · soc · cul · wor · it 중 하나, newsdata 태그와 달라도 됨) ③ 이슈가 아닌 기사 빼기(부음 · 어학 칼럼 · 자동 주가 기사 등) ④ 검색어(`qInTitle`용, 핵심 낱말 + 동의어 OR, 따옴표 구절)를 받음. 연관기사 수는 D13 검색 · 1쪽 검증 그대로. 호출 실패 · 거절 · 형식 오류면 ex07 규칙(D11 · D13)으로 대신함. 이슈 id · 다시 묶기 · 북마크 보호는 ex07 규칙 그대로 | 2026-10-08 | 확정(실패면 그날 전체를 ex07 규칙으로 · 빠진 기사는 수집 섹션 단독 · 이슈 0개 섹션은 D8 · 북마크 섹션으로 간 묶음은 버림 · 검색어에 괄호 · 따옴표 구절 허용. 요약은 별도 명령 `npm run summarize`, 매일 collect → group → summarize) |
 | D14 | seed와 실제 데이터 | 실제 DB에는 샘플을 넣지 않음(운영 환경에 가짜 이슈가 있으면 안 됨). ex07에서 실제 DB의 샘플 issues · 샘플 폴더(f1~f3) · 샘플 북마크를 한 번 지우고, `npm run seed`는 실제 DB에 못 쓰게 함(없애거나 막음). 샘플(`seedRows` · 메모리 저장소)은 테스트에만 씀. 지난 날짜 조회(US-09)는 실제로 쌓인 날짜만 | 2026-10-08 | 확정 |
 
 ## 6. AC 커버리지
