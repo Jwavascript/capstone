@@ -143,8 +143,9 @@ capstone/
 | D9 | 로그인 방식 | 이메일 + 비밀번호. Google 로그인은 SPEC 밖 | ex10 PLAN 전 | 제안 |
 | D10 | 배포 | 기본은 로컬 시연. AC-08-3은 다른 브라우저(일반 + 시크릿 창)로 보임. 폰 시연을 원하면 ex12 | M3 전 | 제안 |
 | D11 | 이슈 묶기 기준 | AI 없이 제목 유사도 규칙으로 묶음(결과가 매번 같고 테스트 가능, 비용 없음). 기준값은 fixture로 맞춰 ex07 PLAN에 적음 | ex07 PLAN 전 | 제안 |
-| D12 | 섹션 판정 | 섹션마다 newsdata.io `category`를 묶어 요청하고(`country=kr` · `language=ko` · `prioritydomain=top` · `removeduplicate=1`), 요청한 섹션을 그 기사의 섹션으로 씀. pol=politics · eco=business · soc=domestic,crime,education · cul=lifestyle,entertainment,health,food,tourism · wor=world · it=technology,science. 같은 링크가 두 섹션에 오면 pol→eco→soc→cul→wor→it 순서에서 먼저 받은 섹션 하나만 | ex06 PLAN 전 | 제안(politics · soc · cul 묶음 요청은 2026-10-07 실제 응답으로 확인) |
+| D12 | 섹션 판정 | 섹션마다 newsdata.io `category`를 묶어 요청하고(`country=kr` · `language=ko` · `prioritydomain=top` · `removeduplicate=1`), 요청한 섹션을 그 기사의 섹션으로 씀. pol=politics · eco=business · soc=domestic,crime,education · cul=lifestyle,entertainment,health,food,tourism · wor=world · it=technology,science. 같은 링크가 두 섹션에 오면 pol→eco→soc→cul→wor→it 순서에서 먼저 받은 섹션 하나만. **출처 섞기(2026-10-08 확정)**: top만 받으면 출처가 조선일보 계열 · investing_kr뿐이라(ex06 실제 60건), 섹션마다 `prioritydomain=top` 1페이지 + prioritydomain 없는 전체 출처 페이지를 함께 받음(하루 크레딧은 지금과 비슷하게). ex07에서 수집 보완으로 반영 | ex06 PLAN 전 · 출처 섞기는 ex07 | 제안 · 출처 섞기 확정 |
 | D13 | 연관기사 수 | 이슈의 대표 키워드로 newsdata.io를 검색한 `totalResults`(최근 48시간, `country=kr` · `language=ko`, prioritydomain 없이 전체 출처). 크레딧 때문에 섹션마다 묶음 크기 상위 6개 후보만 검색하고 그중 Top 5. 검색 실패 · 크레딧 부족이면 묶음 크기로 대신함. 키워드 규칙은 ex07 PLAN | ex07 PLAN 전 | 제안(`q=누리호` → 249건, 2026-10-07 확인) |
+| D14 | seed와 실제 데이터 | 실제 DB에는 샘플을 넣지 않음(운영 환경에 가짜 이슈가 있으면 안 됨). ex07에서 실제 DB의 샘플 issues · 샘플 폴더(f1~f3) · 샘플 북마크를 한 번 지우고, `npm run seed`는 실제 DB에 못 쓰게 함(없애거나 막음). 샘플(`seedRows` · 메모리 저장소)은 테스트에만 씀. 지난 날짜 조회(US-09)는 실제로 쌓인 날짜만 | 2026-10-08 | 확정 |
 
 ## 6. AC 커버리지
 
@@ -212,7 +213,7 @@ API (ex01에서 확정)
 | R2 | 무료 플랜 표본 한계 · 12시간 지연 | 하루 수천 건(정치만 48시간 4,197건) 중 섹션당 30건 정도만 받고, 가장 최근 기사도 약 12시간 전 → 후보 이슈가 전날 오후~저녁에 치우침. 연관기사 수는 전체 출처 48시간 키워드 검색(D13)으로 보정. 발표에서 무료 플랜 한계로 설명 |
 | R3 | 카테고리 태그 부정확 | 전체 출처로 받으면 politics에 사회 · 생활 기사가 섞임 → `prioritydomain=top`으로 줄임(확인됨). 대신 표본 출처가 조선일보 계열 위주로 좁아짐 → 표본만 그렇고, 연관기사 수는 전체 출처로 셈 |
 | R4 | 시연 당일 수집 · AI 장애 | 시연은 이미 저장된 데이터로 함. 라이브 수집 · 요약에 기대지 않음 |
-| R5 | 과거 날짜 데이터 부족(US-09) | M2를 발표 2주 전까지 끝냄. ex07이 되면 ex09 전까지 매일 한 번 손으로 실행 |
+| R5 | 과거 날짜 데이터 부족(US-09) | 샘플로 채우지 않으므로(D14) 실제로 쌓인 날짜만 조회됨 → M2를 발표 2주 전까지 끝냄. ex07이 되면 ex09 전까지 매일 한 번 손으로 수집 · 묶기 실행 |
 | R6 | API 호출 한도 · 비용 | newsdata.io 무료 플랜: 하루 200크레딧(요청 1번 = 1크레딧 · 최대 10건), 15분에 60회. 하루 예산: 수집 6섹션 × 3페이지 = 18 + 연관기사 수 6섹션 × 6 = 36 → 54회(15분 한도 안). 남은 크레딧은 응답 헤더 `x-api-limit-remaining`. 개발 · 심사는 fixture 위주, 실제 호출은 PLAN이 정한 횟수만. AI 요약은 하루 Top 5 × 6섹션 = 30건만, 이미 요약한 이슈는 다시 하지 않음 |
 | R7 | Supabase 접속 · 정지 | 연결 풀러 주소 사용(직접 연결 주소는 IPv6 전용이라 GitHub Actions에서 실패할 수 있음). 무료 프로젝트는 약 1주 안 쓰면 일시 정지 → 매일 자동 실행으로 깨워 둠 |
 
@@ -260,6 +261,7 @@ API (ex01에서 확정)
 - ex06: 같은 날 다시 수집하면 성공한 섹션의 `articles` 행이 새로 들어가 id가 바뀜 → ex07은 기사를 `link`로 이음. `collect_runs`는 실행마다 6행이 쌓임 → ex07의 `updatedAt`은 그날 마지막 ok 실행의 `finished_at`으로
 - ex06: `DB 오류:`는 Drizzle이 감싼 원래 오류(cause) 문구 한 줄로 찍고 비밀값은 `***`(심사 허용). seed · api 서버(`index.ts` · `seed.ts`)는 아직 오류를 그대로 던져 `DATABASE_URL` 형식이 깨지면 주소가 출력될 수 있음 → ex09(GitHub Actions 로그) 전에 같은 처리 필요
 - ex06: collect 출력은 저장이 끝난 뒤 한꺼번에 나옴(3페이지면 약 20초 무출력). `--pages=2`(등호)는 인식 안 돼 기본 3페이지로 돎 → `--pages 2`로 씀. pubDate 형식이 이상하면 실행 전체가 `DB 오류: Invalid time value`로 끝남(실제로는 아직 없음)
+- 2026-10-08: D12 출처 섞기 확정(top 1페이지 + 전체 출처 페이지) · D14 확정(실제 DB에 샘플 없음) → ex07 PLAN은 seed에 기대던 검증 줄(seed 두 번 · 1350행 · 샘플 폴더 f1~f3 · 원상복구의 seed)을 실제 데이터 · 확인 행 기준으로 바꿔야 함
 - ex06: 크레딧 사용(2026-10-07): 0단계 확인 5 · 제작 7 · 심사 7 → 남은 181. 잘못된 키(401) 요청은 크레딧이 안 듦. 실제 수집 기사 60행은 다음 단계용으로 DB에 남김
 
 ## 11. 시연 점검표 (M3 뒤, 발표 전날 다시)
