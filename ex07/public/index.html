@@ -417,7 +417,7 @@ a { color: inherit; }
         <div class="legend" id="legend"></div>
       </div>
       <div id="mapBody"></div>
-      <div class="footer">섹션 영역의 넓이는 Top 5 연관기사 합계, 각 타일은 이슈별 연관기사 수에 비례합니다. 타일을 누르면 요약을 볼 수 있습니다.</div>
+      <div class="footer">섹션 영역은 모두 같은 넓이이고, 각 타일은 연관기사가 많을수록 넓습니다. 타일을 누르면 요약을 볼 수 있습니다.</div>
     </div>
   </section>
 
@@ -487,7 +487,11 @@ const fmtDate = s => { const d = parse(s); return `${d.getMonth() + 1}월 ${d.ge
 const fmtShort = s => { const d = parse(s); return `${d.getMonth() + 1}.${d.getDate()}`; };
 // updatedAt(+09:00) → "10.6 오전 6:00"
 const fmtUpdated = s => { const [d, t] = s.split('T'); const [h, m] = t.split(':').map(Number); return `${fmtShort(d)} ${h < 12 ? '오전' : '오후'} ${h % 12 || 12}:${String(m).padStart(2, '0')}`; };
-const MAX_COUNT = 184;
+// 크기는 로그 비율: r = min(1, ln(1+n) / ln(1+max)), max = 받은 응답(랭킹 또는 북마크)의 최대 연관기사 수
+const L = n => Math.log1p(n);
+const ratio = (n, max) => max > 0 ? Math.min(1, L(n) / L(max)) : 0;
+const rankMax = () => Math.max(0, ...(ranking?.sections ?? []).flatMap(s => s.issues.map(it => it.articleCount)));
+const bmMax = () => Math.max(0, ...state.bookmarks.map(it => it.articleCount));
 
 /* ─────────────── State ─────────────── */
 const state = {
@@ -539,7 +543,7 @@ const summaryHTML = s => s
 
 /* ─────────────── Shared item renderer (목록·북마크 공용) ─────────────── */
 function itemHTML(it, opts = {}) {
-  const w = Math.round(10 + (it.articleCount / MAX_COUNT) * 26);
+  const w = Math.round(10 + 26 * ratio(it.articleCount, opts.saved ? bmMax() : rankMax()));
   const on = !!findBookmark(it.id);
   const meta = opts.saved
     ? `<span class="sec">${SEC[it.section].name} ${it.rank}위</span><span>·</span><span>${esc(folderName(it.folderId))}</span><span class="saved-at">${timeAgo(it.savedAt)} 저장</span>`
@@ -567,7 +571,7 @@ function renderContext() {
   document.getElementById('todayBtn').hidden = isToday;
   document.getElementById('rankTitle').textContent = isToday ? '오늘 가장 많이 보도된 이슈' : `${fmtDate(state.date)}의 주요 이슈`;
   document.getElementById('rankDesc').textContent = state.view === 'map'
-    ? '6개 섹션 Top 5 이슈를 연관기사 수만큼의 넓이로 한 화면에 펼쳤습니다.'
+    ? '6개 섹션 Top 5 이슈를 한 화면에 펼쳤습니다. 연관기사가 많을수록 넓게 보입니다.'
     : '섹션마다 연관기사가 많은 순으로 상위 5개 이슈를 AI가 3줄로 요약했습니다.';
   document.getElementById('updated').textContent = ranking ? `${fmtUpdated(ranking.updatedAt)} 수집 · 이슈 ${ranking.sections.reduce((a, x) => a + x.issues.length, 0)}개` : '';
   document.getElementById('context').classList.toggle('narrow', state.view === 'list');
@@ -635,7 +639,7 @@ function drawMap() {
   const W = map.clientWidth, H = map.clientHeight;
   const gRects = state.zoom
     ? SECTIONS.map(s => s.key === state.zoom ? { s, x: 0, y: 0, w: W, h: H } : { s, x: W / 2, y: H / 2, w: 0, h: 0, hidden: true })
-    : squarify(SECTIONS.map(s => ({ s, value: secTotal(s.key) })), 0, 0, W, H);
+    : squarify(SECTIONS.map(s => ({ s, value: secIssues(s.key).length ? 1 : 0 })), 0, 0, W, H);
 
   for (const r of gRects) {
     const s = r.s;
@@ -649,7 +653,7 @@ function drawMap() {
     label.dataset.zoom = state.zoom ? '' : s.key;
     label.innerHTML = `<i class="dot" style="--c:${secColor(s.key)}"></i>${s.name} <span class="cnt num">${secTotal(s.key)}</span><span class="arrow">${state.zoom ? '← 전체' : '확대 →'}</span>`;
 
-    const tRects = r.hidden ? [] : squarify(secIssues(s.key).map(it => ({ it, value: it.articleCount })), 0, LABEL_H, bw, bh - LABEL_H);
+    const tRects = r.hidden ? [] : squarify(secIssues(s.key).map(it => ({ it, value: L(it.articleCount) })), 0, LABEL_H, bw, bh - LABEL_H);
     const keep = new Set();
     for (const t of tRects) {
       const it = t.it;
@@ -665,7 +669,7 @@ function drawMap() {
       Object.assign(tile.style, { left: (t.x + GAP / 2) + 'px', top: (t.y + GAP / 2) + 'px', width: tw + 'px', height: th + 'px' });
       tile.style.setProperty('--c', secColor(it.section));
       // finviz처럼 같은 색 계열 안에서 명도로 강도 표현: 연관기사가 적을수록 밝게
-      tile.style.setProperty('--l', (0.24 * (1 - Math.min(1, it.articleCount / MAX_COUNT))).toFixed(3));
+      tile.style.setProperty('--l', (0.24 * (1 - ratio(it.articleCount, rankMax()))).toFixed(3));
       const fs = Math.max(11.5, Math.min(state.zoom ? 24 : 17, Math.sqrt(tw * th) / 10.5));
       const lines = Math.max(1, Math.floor((th - 36) / (fs * 1.32)));
       const tEl = tile.querySelector('.t');
@@ -759,7 +763,7 @@ function openDrawer(id) {
   const it = issueById(id); if (!it) return;
   state.selected = id; drawMap();
   const on = !!findBookmark(id);
-  const w = Math.round(10 + (it.articleCount / MAX_COUNT) * 26);
+  const w = Math.round(10 + 26 * ratio(it.articleCount, rankMax()));
   drawer.innerHTML = `
     <div class="drawer-top">
       <div class="item-meta"><span class="dot" style="--c:${secColor(it.section)}"></span><span class="sec">${SEC[it.section].name}</span><span>·</span><span>${fmtDate(it.date)} 랭킹</span></div>
