@@ -1,0 +1,404 @@
+{
+  "status": "success",
+  "totalResults": 126,
+  "results": [
+    {
+      "article_id": "13052139cf99b076f6a83af719b1a9db",
+      "link": "https://www.chosun.com/national/court_law/2026/10/08/OBINI2VMVNBPZGRP3TN5U2WEUU/",
+      "title": "‘숙명여고 쌍둥이 성적 비리’… 진실은 무엇이었나",
+      "description": "숙명여고 교무부장과 쌍둥이 자매가 시험 답안 유출로 기소된 사건을 다룹니다. 법원은 정황 증거들을 바탕으로 유죄를 선고했으며, 대법원은 압수수색 절차의 하자를 지적하면서도 유죄를 확정했습니다. 이는 교육 현장의 공정성과 이해 충돌 문제를 시사합니다.",
+      "keywords": [
+        "업무방해",
+        "판결",
+        "성적비리",
+        "답안유출",
+        "숙명여고",
+        "간접증거",
+        "쌍둥이",
+        "대법원"
+      ],
+      "creator": [
+        "이민경 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "top",
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 20:49:42",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 21:02:53",
+      "image_url": "https://www.chosun.com/resizer/v2/37SHQEI6RNCL5CTWQF4VCXVTMY.png?auth=5e9cf3910ccc79b332f5be9dd3f53bc9b6a56b826d4fe844aed89937aa086cdf&smart=true&width=1920&height=1080",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "52e1e6eb88df6319735d5cb14ae24a59",
+      "link": "https://www.chosun.com/national/2026/10/07/GK7DELGCANBOJLQ6NJPA3F6WMA/",
+      "title": "“법대로 합시다”⋯ 한국이 일본보다 고소고발 4배 많은 까닭",
+      "description": "한국의 높은 형사 고발 건수를 통해 타협보다 법적 대응을 우선시하는 우리 사회의 조급한 갈등 해결 방식을 지적하고, 다양성을 포용하여 상생하는 태도의 중요성을 강조한 칼럼임.",
+      "keywords": [
+        "사회문화",
+        "소송",
+        "형사고발",
+        "갈등",
+        "타협",
+        "포용",
+        "자유민주주의"
+      ],
+      "creator": [
+        "박정웅 mgi컨설팅 대표"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "top",
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 18:00:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 18:32:07",
+      "image_url": "https://www.chosun.com/resizer/v2/HYW7HTC5IJDY3OYXDEC54NKFDU.jpg?auth=1dc2a5bb0260df355ceeb86c883c103300d8cb6cc585583c0dcfec44eb6c2c56&smart=true&width=1456&height=816",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "9a20d28e1d6bc6fe0e0257ad32e6753a",
+      "link": "https://www.chosun.com/politics/politics_general/2026/10/07/OX54HZIT3RAUHJWLFUCVF7WKGI/",
+      "title": "“대통령, 제청 관여 못해” 조희대 작심 반격",
+      "description": "대통령, 제청 관여 못해 조희대 작심 반격 曺 대법원장, 국감 나와 임명권 우위 靑 주장에 정면 대응 대통령과 사전 협의 지적엔 안해도 헌법상 아무 문제 없다",
+      "keywords": null,
+      "creator": [
+        "유종헌 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:55:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:07",
+      "image_url": "https://www.chosun.com/resizer/v2/KFPR6U2DJJCK7OIPBIQ27HFQLI.jpg?auth=dacb91e069c0a1085872136255ade12ebb67b0982c63c114b3a51f6aa406854e&width=1200&height=630&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "51e47224d4ccb8f7c0b3914e45f2587d",
+      "link": "https://www.chosun.com/politics/politics_general/2026/10/07/NSY4UEGKTFFBRLCWWHWZ2BPASM/",
+      "title": "李대통령 “과거 검찰, 없는 죄 뒤집어씌워”",
+      "description": "李대통령 과거 검찰, 없는 죄 뒤집어씌워 공소·중수청장 대행 앞에서 발언 野 공소취소 위한 빌드업 이어가",
+      "keywords": null,
+      "creator": [
+        "김희래 기자",
+        "박상기 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:54:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:07",
+      "image_url": "https://www.chosun.com/resizer/v2/D6WT6SQULJBIXEIIOCCRWY2OKE.jpg?auth=5fa33510464473433f5da4c824376bd7f40f1c2576437df0f0c869d205e0f1f4&width=1200&height=630&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "1591ca160848dd05c95b423a94b7e805",
+      "link": "https://www.chosun.com/politics/assembly/2026/10/07/Z2SB5ZZZKRE2BNJD6JM4DP72I4/",
+      "title": "與 “와인 사는데 업무추진비 1억”… 조희대 “술 안 마셔, 카드 본 적도 없다”",
+      "description": "국회 법사위 국감에서 조희대 대법원장의 업무추진비 와인 구매와 고가 식사 논란이 제기되었습니다. 조 대법원장은 직접 집행에 관여하지 않는다고 해명했습니다. 현장에서는 위원장과 여당 의원 간의 막말 및 발언권 정지 등 파행이 발생하며 사법부 국감의 혼란상이 드러났습니다.",
+      "keywords": [
+        "막말",
+        "서영교",
+        "조희대",
+        "업무추진비",
+        "대법원",
+        "국정감사",
+        "법제사법위원회",
+        "이성윤",
+        "와인"
+      ],
+      "creator": [
+        "이해인 기자",
+        "김상윤 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:51:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:07",
+      "image_url": "https://www.chosun.com/resizer/v2/MBLPPBZGGJAS3GCR23OTACYVZY.jpg?auth=ab9b2848fdfe1c4bf9e8f3d807d496a3fe5bff8874bb1ee95f6bca6246ca4b72&width=1200&height=630&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "63ac2c0d174c4ccfe7dd63770503f8a6",
+      "link": "https://www.chosun.com/politics/assembly/2026/10/07/A65ZHJM4QFA7ZPFCOAZXT7YR7Y/",
+      "title": "“제2 윤석열” 공세에 “모욕적”… 조희대, 준비한 원고 꺼내 6분간 반박",
+      "description": null,
+      "keywords": null,
+      "creator": [
+        "김승재 기자",
+        "유종헌 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:51:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:07",
+      "image_url": "https://www.chosun.com/resizer/v2/H4LYHNUW7JGQ7CMLVDPLOGJHUE.jpg?auth=560af290d92ef06e449feecfc0a70990b7eece318b930bb37d0b9f8055ae606b&width=1200&height=630&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "25721c8887abbf4d1aceaa0fdea92544",
+      "link": "https://www.chosun.com/politics/diplomacy-defense/2026/10/07/IZB5OGXCG5BG7L5V7MJJZJIKB4/",
+      "title": "野 “국정원장도 美 입국 거부 당해”… 조현 “내가 아는한 아니다”",
+      "description": null,
+      "keywords": null,
+      "creator": [
+        "김동하 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:50:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:07",
+      "image_url": "https://www.chosun.com/resizer/v2/NODCVVKKKNJF7LMI37KNEZHPLI.JPG?auth=f626fd20b9bbcee4489f8766204987b75545e8f6ed23deeff12255e11de15b87&width=1200&height=630&focal=1750,870",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "76ac8da6e7dd5c335e691ce61d3a5673",
+      "link": "https://www.chosun.com/politics/diplomacy-defense/2026/10/07/6U2PAICQFZFYXALKIYUPWVZGZY/",
+      "title": "姜국방 “北지뢰 제거 작전은 단호한 대응” 北 “영토 1㎜라도 침범한다면 무력 행동”",
+      "description": "姜국방 北지뢰 제거 작전은 단호한 대응 北 영토 1㎜라도 침범한다면 무력 행동 강신철 北이 대화 테이블 나와야 李, 국무회의서 北지뢰 언급 안해",
+      "keywords": null,
+      "creator": [
+        "양지호 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:50:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:07",
+      "image_url": "https://www.chosun.com/resizer/v2/LH7SOGODZBA5VKFT3XR6WBCYGM.jpg?auth=719bd66db950c10145962e3f1377707ad4e8f33f7b9a5b7e65603d8748bf1121&width=667&height=350&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "fd492fdcdf8eaaed2f28c13af466f0a9",
+      "link": "https://www.chosun.com/politics/politics_general/2026/10/07/76N755CMNBHQTL7A6GABXF2GKQ/",
+      "title": "농지조사 반발 크자… 李, 농어민이 반대한 ‘CPTPP 가입’ 원점 재검토 지시",
+      "description": "이재명 대통령이 농어민의 반발과 시장 개방에 따른 피해 우려를 고려해 CPTPP 가입 추진을 원점에서 재검토하기로 결정함. 정부는 국익보다 농어민과의 신뢰 및 공감대 형성이 우선이라는 판단하에 가입 논의를 전면 중단하고 대화를 재개함.",
+      "keywords": [
+        "시장개방",
+        "농지조사",
+        "cptpp",
+        "이재명",
+        "농수산업",
+        "농어민"
+      ],
+      "creator": [
+        "김태준 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:48:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:07",
+      "image_url": null,
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "5169c23eb9bf330ad018b69d110b2e28",
+      "link": "https://www.chosun.com/politics/politics_general/2026/10/07/TGC6KAJCURGPDFR3S3LLECHBEQ/",
+      "title": "면접서 꼴찌하고도 공기업 사장된 사람 김현지 주례였다",
+      "description": "한국지역난방공사 하동근 사장이 채용 심사 최하위 성적에도 불구하고 김현지 실장과의 친분으로 임명된 사실이 드러남. 또한 한국환경산업기술원장 선임 과정에서도 성남 라인 인사가 우선 선정되는 등 공기업 인사를 둘러싼 정실 인사와 외압 의혹이 국정감사에서 제기됨.",
+      "keywords": [
+        "성남라인",
+        "인사비리",
+        "채용논란",
+        "김현지",
+        "이재명",
+        "한국지역난방공사",
+        "하동근"
+      ],
+      "creator": [
+        "이해인 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "politics"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:48:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:07",
+      "image_url": "https://www.chosun.com/resizer/v2/ZCKY2GL2ZJE45JGJENIKD7MZDI.JPG?auth=e906419f763cb99aae7401691a22b39f3fc3b41880c6d6e4b63bccd7c85c3cf0&width=1171&height=614&focal=623,327",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    }
+  ],
+  "nextPage": "NEXT_PAGE_TOKEN"
+}

@@ -9,8 +9,8 @@
 ```
 [GitHub Actions · 매일 06:00 KST]
   └ npm run daily
-      1) 수집: 네이버 검색 API → 섹션 6개의 그날 기사 저장
-      2) 묶기: 같은 사건 기사 → 이슈
+      1) 수집: newsdata.io → 섹션 6개의 최신 기사 표본 저장
+      2) 묶기: 같은 사건 기사 → 이슈, 대표 키워드로 newsdata.io를 검색해 연관기사 수
       3) 요약: 요약 없는 Top 5만 → Claude API → 3줄 저장
               │
               ▼
@@ -33,8 +33,8 @@
 | 입력 검사 | Zod | ex03 |
 | 테스트 | Vitest | ex04 |
 | DB | Supabase Postgres + Drizzle | ex05 |
-| 수집 | 네이버 검색 API(뉴스) | ex06 |
-| 이슈 묶기 | 제목 유사도 규칙(D11) | ex07 |
+| 수집 | newsdata.io 뉴스 API(무료 플랜, D0 · D12) | ex06 |
+| 이슈 묶기 · 연관기사 수 | 제목 유사도 규칙(D11) · 키워드 검색 `totalResults`(D13) | ex07 |
 | AI 요약 | Claude API(`@anthropic-ai/sdk`) | ex08 |
 | 자동 실행 | GitHub Actions 예약 실행 | ex09 |
 | 로그인 | Better Auth(이메일 + 비밀번호) | ex10 |
@@ -46,8 +46,9 @@
 - 같은 날 다시 돌리면 덮어씀(중복 없음). 이슈 id는 유지(북마크가 가리킴)
 - 랭킹은 저장하지 않고 조회 때 계산: 연관기사 수 ↓ → 최신 발행 시각 ↓ → 섹션별 5개
 - 북마크 하나는 폴더 하나에 속함
-- 기사 본문은 저장 · 표시하지 않음(검색 API의 짧은 설명문까지만)
+- 기사 본문은 저장 · 표시하지 않음(API의 짧은 설명문까지만)
 - 비밀값은 `.env`에만, 이름은 7절 표 그대로
+- newsdata.io 크레딧은 하루 200: 테스트는 저장한 응답(fixture)으로, 실제 호출은 PLAN이 정한 횟수만, 키는 헤더로 보내고 URL · 로그 · 보고에 남기지 않음
 
 폴더 (ex11 기준. 단계 PLAN이 다르게 정하면 그쪽을 따름)
 ```
@@ -71,14 +72,14 @@ capstone/
 
 | 단계 | 주제 | 끝나면 되는 것 | 계정 · 키 | 상태 |
 |---|---|---|---|---|
-| 0 | 준비 | 첫 커밋, 결정 D0 · D2 확정, 검색 API 응답 확인 | GitHub · 네이버 개발자센터 | 진행 중 |
+| 0 | 준비 | 첫 커밋, 결정 D0 · D2 확정, newsdata.io 응답 확인 | GitHub · newsdata.io | 진행 중(GitHub · 발표일 남음) |
 | ex01 | OpenAPI 계약 | 화면이 바라는 API(폴더 포함)가 `openapi.yaml`로 고정 | — | 완료 (PASS 9/9, 2026-10-07) |
 | ex02 | Hono 구현 · Next.js 중계(BFF) | 화면이 가짜 데이터 대신 Next.js → Hono(메모리 샘플)로 동작 | — | 완료 (PASS 28/28, 2026-10-07) |
 | ex03 | Zod 입력 검사 | 잘못된 · 미래 날짜, 잘못된 북마크 · 폴더 요청을 거절 | — | 완료 (PASS 38/38, 2026-10-07) |
 | ex04 | Vitest | 랭킹 규칙과 API 동작이 테스트로 고정 (M1) | — | 완료 (PASS 24/24, 2026-10-07) · M1 달성 |
 | ex05 | Supabase + Drizzle | 서버를 다시 켜도 랭킹 · 북마크 · 폴더 유지 | Supabase | 완료 (PASS 37/37, 2026-10-07) |
-| ex06 | 네이버 검색 API 수집 | 명령 한 번으로 섹션별 그날 기사가 DB에 | 네이버 검색 API 키 | 대기 |
-| ex07 | 이슈 묶기 | 그날 기사가 이슈로 묶이고 연관기사 수가 생김 | — | 대기 |
+| ex06 | newsdata.io 수집 | 명령 한 번으로 섹션별 최신 기사가 DB에(실패 섹션은 기록하고 나머지는 저장) | newsdata.io 키 | 완료 (PASS 33/33, 2026-10-07) |
+| ex07 | 이슈 묶기 · 연관기사 수 | 수집한 기사가 이슈로 묶이고, 키워드 검색으로 연관기사 수가 생겨 화면이 실제 이슈로 바뀜 | newsdata.io 키 | 대기 |
 | ex08 | AI 3줄 요약 | Top 5 카드에 실제 요약 | Anthropic API 키 | 대기 |
 | ex09 | 하루 1회 자동 실행 | 매일 저절로 수집 · 묶기 · 요약, 날짜별 데이터가 쌓임 (M2) | GitHub Secrets | 대기 |
 | ex10 | Better Auth 로그인 | 가입 · 로그인 · 로그아웃 | — | 대기 |
@@ -102,8 +103,8 @@ capstone/
 | ex03 | zod · @hono/zod-validator | 미래 날짜 판정은 KST 기준. 폴더 이름은 앞뒤 공백을 뺀 1~16자. 같은 이름 폴더를 허용할지는 PLAN에서 정함. 오류 메시지는 화면에 보일 문구 |
 | ex04 | vitest | 테스트는 고정 날짜 · 샘플로(실행일에 따라 결과가 바뀌지 않게). 네트워크 · 외부 API 호출 없음 |
 | ex05 | drizzle-orm · postgres · drizzle-kit | 샘플은 seed 명령으로 DB에. `DATABASE_URL`은 Supabase 연결 풀러 주소. 마이그레이션 파일도 커밋 |
-| ex06 | 없음(Node 내장 fetch) | 섹션별 검색어 표와 섹션 판정 규칙을 PLAN에 직접 적음(0단계 확인 결과 반영). 제목 · 설명문의 `<b>` 태그와 HTML 엔티티는 저장 전에 지움. KST 그날 기사만, 같은 링크는 한 번만. 섹션당 호출 수 상한. 응답 샘플을 fixture로 저장해 테스트 |
-| ex07 | 없음 | 묶기 기준(D11)과 기준값을 PLAN 표로. 같은 날 다시 묶어도 대표 기사가 같은 이슈는 id 유지. 대표 기사 = 묶음에서 가장 먼저 · 가장 많이 나온 기준을 PLAN에서 정함. fixture로 테스트 |
+| ex06 | 없음(Node 내장 fetch) | 요청 규칙은 D12와 10절 "0단계 newsdata.io" 메모 그대로. 응답 fixture는 `research/newsdata/*.json`을 `test/fixtures/`로 복사해 씀(테스트는 네트워크 없이). 섹션당 최대 페이지(기본 3)를 명령 옵션으로 줄일 수 있게(확인용 1). 기사 날짜 칸은 수집한 날(KST, D3), 발행 시각은 UTC를 바꿔 저장. 같은 날 다시 수집하면 성공한 섹션만 그날 기사를 바꾸고, 실패한 섹션은 이전 기사를 그대로 둠(AC-01-2). seed는 `articles` · `collect_runs`를 지우지 않음. 랭킹 화면은 아직 샘플 이슈(묶기는 ex07) |
+| ex07 | 없음 | 묶기 기준(D11)과 기준값을 PLAN 표로. 연관기사 수는 D13(섹션당 후보 6개만 키워드 검색, 실패면 묶음 크기). 키워드 뽑는 규칙(예: 묶음 제목들에 함께 나온 2글자 이상 낱말)을 PLAN 표로, `q`는 URL 인코딩. 같은 날 다시 묶어도 대표 기사가 같은 이슈는 id 유지. 대표 기사 기준을 PLAN에서 정함. 랭킹 `updatedAt`을 실제 수집 시각으로. seed와 실제 이슈가 섞이지 않게 정함. 검색 응답 fixture(`research/newsdata/latest_kr_ko_q_nuri.json`)로 테스트 |
 | ex08 | @anthropic-ai/sdk | 요약 없는 Top 5만. 입력은 묶인 기사의 제목 · 설명문. 실패 · 거절(refusal)은 null. 3줄은 구조화 출력으로 받음. PLAN · 제작 때 Claude Code `claude-api` 스킬로 최신 사용법 확인 |
 | ex09 | 없음 | cron은 UTC: `0 21 * * *` = 06:00 KST. 키는 GitHub Secrets. 이후 단계마다 워크플로의 폴더를 최신 exXX로 바꿈 |
 | ex10 | better-auth | 화면에 번들러가 없으니 fetch로 `/api/auth/*` 호출. Better Auth 테이블은 CLI로 Drizzle 스키마에 더함 |
@@ -130,10 +131,10 @@ capstone/
 
 | # | 항목 | 내용 | 정할 때 | 상태 |
 |---|---|---|---|---|
-| D0 | 뉴스 출처 | 네이버 검색 API(뉴스). 페이지 크롤링은 하지 않음(SPEC #18). 약관에서 결과 저장 · AI 요약 사용 허용 여부는 0단계에서 확인 | 2026-10-07 | 확정 |
+| D0 | 뉴스 출처 | newsdata.io 뉴스 API(무료 플랜). 네이버 뉴스 페이지 크롤링(robots.txt)과 네이버 검색 API(약관상 결과의 AI 가공 금지, 기사 수 미제공)는 쓰지 않음. 빅카인즈는 유료라 제외(SPEC #18 · #20) | 2026-10-07 | 확정 |
 | D1 | 화면 연결 | Next.js(3000)가 화면과 `/api/*`를 주고, `/api/*`는 Hono API 서버(8787)로 중계(BFF). 브라우저는 Hono를 직접 부르지 않음 | 2026-10-07 | 확정 |
 | D2 | 북마크 폴더 | MVP에 넣음. 지금 화면 동작 그대로(SPEC US-10). 이름 변경 · 삭제 · 이동은 범위 밖 | 2026-10-07 | 확정 |
-| D3 | 날짜 기준 | KST. 수집은 매일 06:00. date 없이 부르면 가장 최근 수집일을 돌려주고, 화면 첫 진입은 그 날짜 | ex01 전 | 제안 |
+| D3 | 날짜 기준 | KST. 수집은 매일 06:00. 랭킹 날짜 = 수집한 날(KST). newsdata.io 무료 플랜은 약 12시간 늦어서 06:00 수집분은 주로 전날 오후~저녁 기사. date 없이 부르면 가장 최근 수집일을 돌려주고, 화면 첫 진입은 그 날짜 | ex01 전(12시간 지연은 2026-10-07 추가) | 제안 |
 | D4 | 언어 · 런타임 | TypeScript, Node 20 이상(현재 PC는 24), `npm run build` = `next build` + Hono 서버 타입 검사(`tsc --noEmit`) | ex02 전 | 제안 |
 | D5 | 자동 실행 | GitHub Actions 예약 실행. 서버가 꺼져 있어도 돎 | ex09 PLAN 전 | 제안 |
 | D6 | AI 요약 | 모델은 `claude-opus-5-5`(기본값. 더 싼 모델로 바꿀지는 사용자 결정). 입력은 묶인 기사의 제목 · 설명문만 | ex08 PLAN 전 | 제안 |
@@ -142,7 +143,8 @@ capstone/
 | D9 | 로그인 방식 | 이메일 + 비밀번호. Google 로그인은 SPEC 밖 | ex10 PLAN 전 | 제안 |
 | D10 | 배포 | 기본은 로컬 시연. AC-08-3은 다른 브라우저(일반 + 시크릿 창)로 보임. 폰 시연을 원하면 ex12 | M3 전 | 제안 |
 | D11 | 이슈 묶기 기준 | AI 없이 제목 유사도 규칙으로 묶음(결과가 매번 같고 테스트 가능, 비용 없음). 기준값은 fixture로 맞춰 ex07 PLAN에 적음 | ex07 PLAN 전 | 제안 |
-| D12 | 섹션 판정 | 검색 결과 링크가 네이버 뉴스 주소면 `sid` 값(100 정치 · 101 경제 · 102 사회 · 103 생활·문화 · 104 세계 · 105 IT·과학)으로 판정. 없으면 그 기사는 버림. 0단계에서 실제 응답으로 확인 | ex06 PLAN 전 | 제안 · 확인 필요 |
+| D12 | 섹션 판정 | 섹션마다 newsdata.io `category`를 묶어 요청하고(`country=kr` · `language=ko` · `prioritydomain=top` · `removeduplicate=1`), 요청한 섹션을 그 기사의 섹션으로 씀. pol=politics · eco=business · soc=domestic,crime,education · cul=lifestyle,entertainment,health,food,tourism · wor=world · it=technology,science. 같은 링크가 두 섹션에 오면 pol→eco→soc→cul→wor→it 순서에서 먼저 받은 섹션 하나만 | ex06 PLAN 전 | 제안(politics · soc · cul 묶음 요청은 2026-10-07 실제 응답으로 확인) |
+| D13 | 연관기사 수 | 이슈의 대표 키워드로 newsdata.io를 검색한 `totalResults`(최근 48시간, `country=kr` · `language=ko`, prioritydomain 없이 전체 출처). 크레딧 때문에 섹션마다 묶음 크기 상위 6개 후보만 검색하고 그중 Top 5. 검색 실패 · 크레딧 부족이면 묶음 크기로 대신함. 키워드 규칙은 ex07 PLAN | ex07 PLAN 전 | 제안(`q=누리호` → 249건, 2026-10-07 확인) |
 
 ## 6. AC 커버리지
 
@@ -152,7 +154,7 @@ capstone/
 | US-02 이슈 묶음 | 02-1 · 02-2 | ex07 | ex07 |
 | US-03 섹션별 랭킹 | 03-1 · 03-2 | ex02(메모리) | ex04(테스트) · ex05(DB) |
 | US-04 AI 요약 카드 | 04-1 · 04-2 · 04-3 | ex02(샘플 요약 · null) | ex08 |
-| US-05 대시보드 | 05-1 · 05-2 | ex02(갱신 시각 API) | ex06(실제 수집 시각) |
+| US-05 대시보드 | 05-1 · 05-2 | ex02(갱신 시각 API) | ex07(실제 수집 시각) |
 | US-06 가입 · 로그인 | 06-1 · 06-2 | ex10 | ex10 |
 | US-07 북마크 | 07-1 · 07-2 · 07-3 | ex02(메모리, 사용자 구분 없음) | ex11(계정별 · 비로그인 차단) |
 | US-08 북마크 대시보드 | 08-1 · 08-2 · 08-3 | ex02 | ex11 |
@@ -185,8 +187,8 @@ API (ex01에서 확정)
 | 테이블 | 주요 칸 | 단계 |
 |---|---|---|
 | `issues` | id · date · section · title · url · article_count · latest_published_at · summary(null 가능) | ex05 |
-| `articles` | id · date · section · title · description · link · original_link · published_at · issue_id | ex06(issue_id는 ex07) |
-| `collect_runs` | date · section · status(ok/failed) · message · finished_at | ex06 |
+| `articles` | id · date(수집한 날 KST) · section · title · description(null 가능) · link · source_id · published_at · issue_id | ex06(issue_id는 ex07) |
+| `collect_runs` | date · section · status(ok/failed) · message · article_count · finished_at | ex06 |
 | `folders` | id · name · created_at · user_id | ex05(user_id는 ex11) |
 | `bookmarks` | id · issue_id · folder_id · created_at · user_id | ex05(user_id는 ex11) |
 | Better Auth | user · session · account · verification | ex10 |
@@ -198,7 +200,7 @@ API (ex01에서 확정)
 | `API_PORT` | Hono API 서버 포트(기본 8787). Next.js는 3000 | ex02 |
 | `API_URL` | BFF가 중계할 Hono 주소(기본 `http://localhost:8787`) | ex02 |
 | `DATABASE_URL` | Supabase 접속(연결 풀러 주소) | ex05 |
-| `NAVER_CLIENT_ID` · `NAVER_CLIENT_SECRET` | 네이버 검색 API | ex06 |
+| `NEWSDATA_API_KEY` | newsdata.io 수집 · 연관기사 수 검색(헤더 `X-ACCESS-KEY`로 보냄) | ex06 |
 | `ANTHROPIC_API_KEY` | AI 요약 | ex08 |
 | `BETTER_AUTH_SECRET` · `BETTER_AUTH_URL` | 로그인 | ex10 |
 
@@ -206,12 +208,12 @@ API (ex01에서 확정)
 
 | # | 위험 | 대비 |
 |---|---|---|
-| R1 | 출처 정책 | news.naver.com의 robots.txt가 모든 봇과 AI 목적 접근을 막음(2026-10-07 확인) → D0로 검색 API 사용. 남은 일: 검색 API 약관에서 결과 저장 · AI 요약 사용 허용 여부 확인, 필요하면 지도교수와 합의 |
-| R2 | "많이 보도된" 판단이 검색어에 좌우됨 | 검색 API는 검색어가 있어야 결과를 줌 → 섹션마다 넓은 검색어 여러 개 + 최신순으로 모음. 검색어 표는 ex06 PLAN에 적고, 결과를 보며 고침 |
-| R3 | 섹션 판정 실패(D12) | 0단계에서 실제 응답의 링크에 `sid`가 있는지 확인. 없거나 적으면 검색어 기준 섹션으로 바꿈 |
+| R1 | 출처 정책 | news.naver.com의 robots.txt가 자동 수집 · AI 목적 접근을 막고(2026-10-07 확인), 네이버 검색 API 약관은 결과의 AI 가공을 금지하며 기사 수도 주지 않음 → D0를 newsdata.io로 변경. newsdata.io의 AI 가공 가능 여부는 사용자가 확인함. 발표에서 출처 선택 이유로 설명 |
+| R2 | 무료 플랜 표본 한계 · 12시간 지연 | 하루 수천 건(정치만 48시간 4,197건) 중 섹션당 30건 정도만 받고, 가장 최근 기사도 약 12시간 전 → 후보 이슈가 전날 오후~저녁에 치우침. 연관기사 수는 전체 출처 48시간 키워드 검색(D13)으로 보정. 발표에서 무료 플랜 한계로 설명 |
+| R3 | 카테고리 태그 부정확 | 전체 출처로 받으면 politics에 사회 · 생활 기사가 섞임 → `prioritydomain=top`으로 줄임(확인됨). 대신 표본 출처가 조선일보 계열 위주로 좁아짐 → 표본만 그렇고, 연관기사 수는 전체 출처로 셈 |
 | R4 | 시연 당일 수집 · AI 장애 | 시연은 이미 저장된 데이터로 함. 라이브 수집 · 요약에 기대지 않음 |
 | R5 | 과거 날짜 데이터 부족(US-09) | M2를 발표 2주 전까지 끝냄. ex07이 되면 ex09 전까지 매일 한 번 손으로 실행 |
-| R6 | API 호출 한도 · 비용 | 검색 API는 하루 호출 한도가 있음 → 섹션당 호출 수 상한. AI 요약은 하루 Top 5 × 6섹션 = 30건만, 이미 요약한 이슈는 다시 하지 않음 |
+| R6 | API 호출 한도 · 비용 | newsdata.io 무료 플랜: 하루 200크레딧(요청 1번 = 1크레딧 · 최대 10건), 15분에 60회. 하루 예산: 수집 6섹션 × 3페이지 = 18 + 연관기사 수 6섹션 × 6 = 36 → 54회(15분 한도 안). 남은 크레딧은 응답 헤더 `x-api-limit-remaining`. 개발 · 심사는 fixture 위주, 실제 호출은 PLAN이 정한 횟수만. AI 요약은 하루 Top 5 × 6섹션 = 30건만, 이미 요약한 이슈는 다시 하지 않음 |
 | R7 | Supabase 접속 · 정지 | 연결 풀러 주소 사용(직접 연결 주소는 IPv6 전용이라 GitHub Actions에서 실패할 수 있음). 무료 프로젝트는 약 1주 안 쓰면 일시 정지 → 매일 자동 실행으로 깨워 둠 |
 
 ## 9. 0단계 준비 (ex01 전)
@@ -220,11 +222,11 @@ API (ex01에서 확정)
 - [x] `node -v` 20 이상: v24.21.0
 - [x] D0 · D2 결정 (2026-10-07)
 - [ ] GitHub 저장소 만들기(ex09 자동 실행에 필요, private 가능)
-- [ ] 네이버 개발자센터에서 애플리케이션 등록(검색 API) → Client ID · Secret 받기
-- [ ] 검색 API 약관 확인: 결과 저장 · AI 요약에 사용해도 되는지, 하루 호출 한도
-- [ ] 검색 API 응답 확인: 섹션별 검색어 몇 개로 호출해 링크의 `sid` 유무와 하루 기사 양 확인(D12 · R2·R3). 응답 몇 개는 ex06 fixture용으로 보관
-- [ ] D1 · D3 · D7 제안 확인(ex01 계약에 들어감)
-- [ ] 계정 미리 만들기: Supabase(ex05) · Anthropic Console API 키와 결제 수단(ex08)
+- [x] 네이버 검색 API 검토: 약관상 결과의 AI 가공 금지 · 기사 수 미제공 → 쓰지 않음(D0, 2026-10-07)
+- [x] newsdata.io 키(`NEWSDATA_API_KEY`) · 응답 확인(2026-10-07, 크레딧 5개 사용): 10절 "0단계 newsdata.io" 메모. 응답 샘플은 `research/newsdata/`(본문 칸 뺌)
+- [x] D1 확정 · D3 · D7은 제안대로 ex01~ex05에 반영
+- [x] Supabase 프로젝트 · `DATABASE_URL`(ex05, 비밀번호 교체 완료)
+- [ ] Anthropic Console API 키와 결제 수단(ex08)
 - [ ] 발표일 확인 → 2절 M2 날짜 적기
 
 ## 10. 단계 메모 (다음 PLAN에 넘길 것)
@@ -251,7 +253,14 @@ API (ex01에서 확정)
 - ex05: 날짜 · 섹션마다 후보가 딱 5개라 지금은 모두 Top 5. 후보가 5개를 넘으면(ex07) Top 5 밖 이슈의 북마크 저장(404) · 목록 카드(빈 칸)를 어떻게 할지 정함
 - ex05: 폴더를 동시에 두 번 만들면 id 충돌(500), 저장 시각이 같은 북마크는 순서 미정 → 지금은 영향 작음, ex11 계정별 저장 때 함께 봄
 - ex05: Next.js도 `ex05/.env`를 읽음 → 비밀값을 `NEXT_PUBLIC_` 이름으로 두지 않음
-- ex05: 심사 중 `DATABASE_URL`이 에이전트 명령 출력에 한 번 노출됨(파일엔 없음) → Supabase DB 비밀번호 교체 권장. 에이전트는 `.env`를 읽는 스크립트에서 값이 오류 메시지로 새지 않게 주의
+- ex05: 심사 중 `DATABASE_URL`이 에이전트 명령 출력에 한 번 노출됨(파일엔 없음) → 사용자가 Supabase DB 비밀번호 교체함(2026-10-07). 비밀번호를 바꾼 직후 몇 분은 풀러가 28P01을 낼 수 있음. 에이전트는 `.env`를 읽는 스크립트에서 값이 오류 메시지로 새지 않게 주의
+- 0단계 newsdata.io(2026-10-07 실제 응답): 엔드포인트 `https://newsdata.io/api/1/latest`, 키는 헤더 `X-ACCESS-KEY`(URL에 넣지 않음). 한 번에 최대 10건, 다음 페이지는 응답의 `nextPage` 값을 `page` 파라미터로. `pubDate`는 `YYYY-MM-DD HH:mm:ss`이고 `pubDateTZ`=UTC. `category`는 배열(여러 개). `link`는 언론사 주소, `source_id` · `source_name` 있음. `description`은 없을 수 있음(평균 80~330자). `content` · `ai_*` · `sentiment` 칸은 "ONLY AVAILABLE IN …" 문구라 저장하지 않음. 남은 크레딧은 응답 헤더 `x-api-limit-remaining`, 15분 한도는 `x-ratelimit-remaining`. `timeframe`은 유료(422, 크레딧 안 빠짐). `prioritydomain=top` · 여러 카테고리 쉼표 묶음 · `removeduplicate=1` · `q`는 무료로 됨
+- ex06: D12 카테고리 묶음 6개 모두 실제 수집에서 10건씩 받음(eco · wor · it 포함). `prioritydomain=top`이라 출처가 chosun · biz_chosun · sports_chosun · it_chosun · investing_kr 5곳뿐(R3), 발행 시각은 수집보다 약 12시간 전(R2)
+- ex06: 설명문 null이 많음(실제 60건 중 25건, eco는 10건 중 9건) → ex08 요약 입력이 제목 위주가 될 수 있음. 설명문은 300자(코드 포인트)에서 잘라 저장(사람 검토로 PLAN에 추가)
+- ex06: 같은 날 다시 수집하면 성공한 섹션의 `articles` 행이 새로 들어가 id가 바뀜 → ex07은 기사를 `link`로 이음. `collect_runs`는 실행마다 6행이 쌓임 → ex07의 `updatedAt`은 그날 마지막 ok 실행의 `finished_at`으로
+- ex06: `DB 오류:`는 Drizzle이 감싼 원래 오류(cause) 문구 한 줄로 찍고 비밀값은 `***`(심사 허용). seed · api 서버(`index.ts` · `seed.ts`)는 아직 오류를 그대로 던져 `DATABASE_URL` 형식이 깨지면 주소가 출력될 수 있음 → ex09(GitHub Actions 로그) 전에 같은 처리 필요
+- ex06: collect 출력은 저장이 끝난 뒤 한꺼번에 나옴(3페이지면 약 20초 무출력). `--pages=2`(등호)는 인식 안 돼 기본 3페이지로 돎 → `--pages 2`로 씀. pubDate 형식이 이상하면 실행 전체가 `DB 오류: Invalid time value`로 끝남(실제로는 아직 없음)
+- ex06: 크레딧 사용(2026-10-07): 0단계 확인 5 · 제작 7 · 심사 7 → 남은 181. 잘못된 키(401) 요청은 크레딧이 안 듦. 실제 수집 기사 60행은 다음 단계용으로 DB에 남김
 
 ## 11. 시연 점검표 (M3 뒤, 발표 전날 다시)
 

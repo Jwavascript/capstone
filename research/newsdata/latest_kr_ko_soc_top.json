@@ -1,0 +1,407 @@
+{
+  "status": "success",
+  "totalResults": 52,
+  "results": [
+    {
+      "article_id": "14b970e23c1eb58fcabd8670158eb4cf",
+      "link": "https://biz.chosun.com/topics/topics_social/2026/10/07/LLFEV3JILVEQXAMPLN6SKYUGAY/",
+      "title": "수천만원 ‘리니지 집행검’은 가능, 항공 마일리지는 소멸… 디지털 상속 어디까지",
+      "description": null,
+      "keywords": null,
+      "creator": [
+        "이경민 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "crime",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 21:00:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 21:02:39",
+      "image_url": "https://biz.chosun.com/resizer/v2/NU4IMCCDPJGRDMA4POPVWE27JI.png?auth=f991cd9eb4a5856b9ec6017b3d930c4432d79a91fd492b771da7f6d61a0f6946&width=1200&height=630&smart=true",
+      "video_url": null,
+      "source_id": "biz_chosun",
+      "source_name": "Chosunbiz",
+      "source_priority": 7948,
+      "source_url": "https://biz.chosun.com",
+      "source_icon": "https://i.newsdata.io/biz_chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "2917e25b7372dff011c314300bf26d68",
+      "link": "https://www.chosun.com/national/education/2026/10/07/E6BRHXENRVAJJJQULBMLMWG35Q/",
+      "title": "“이야, 옛날 생각 나네”… ‘remind’에는 감성이 없다고?",
+      "description": "과거의 추억을 떠올릴 때 사용하는 감각적인 영어 표현인 bring back과 take back의 의미와 차이점, 그리고 실생활에서 활용할 수 있는 다양한 예문과 상황별 영어 회화 패턴을 정리한 학습 정보 기사입니다.",
+      "keywords": [
+        "take back",
+        "구동사",
+        "기억",
+        "추억",
+        "감성표현",
+        "bring back",
+        "영어회화"
+      ],
+      "creator": [
+        "윤희영 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "top",
+        "education"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 18:00:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 18:32:07",
+      "image_url": "https://www.chosun.com/resizer/v2/XSTRQJZ64VBZFKILW4RT7GQF3U.png?auth=8059dc6697462fd7f0a71a18224ca0e9c859b16c1275d96e06d35a1959bb7848&smart=true&width=1800&height=1012",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "24ec7b729330bf6e6553688ccf1f49ee",
+      "link": "https://www.chosun.com/national/obituary-personnel/2026/10/07/DHLSB4RV4BF53PE4DRMVHEX5VU/",
+      "title": "[플라자] 한국에스페란토협회 제58차 한국에스페란토대회 개최",
+      "description": "한국에스페란토협회가 제58차 한국에스페란토대회를 11월 9일부터 11일까지 경주 더케이호텔에서 개최하며, 150여 명의 사용자가 참여할 예정임.",
+      "keywords": [
+        "에스페란토",
+        "한국에스페란토협회",
+        "경주",
+        "더케이호텔",
+        "학술대회"
+      ],
+      "creator": [
+        "조선일보"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "top",
+        "education"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:40:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:24",
+      "image_url": null,
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "bbbfa61b18f169ab21cdceb38d065ad5",
+      "link": "https://www.chosun.com/national/nie/2026/10/07/AKCQZO5LFZFQLAZHD4KLXAAXTE/",
+      "title": "[신문은 선생님] [알립니다] 중등 NIE 11·12월 수강생을 모집합니다",
+      "description": "조선일보 NIE 교육센터가 11월과 12월에 실시하는 중등부 수강생을 모집합니다. 중학생을 대상으로 하는 이번 교육은 신문 기사를 활용해 문해력과 사고력을 높이는 과정입니다. 대치 본원 오프라인 수업과 온라인 수업을 병행하며, 6회 과정으로 진행되는 수업료는 30만 원입니다. 상세 내용은 홈페이지를 통해 신청할 수 있습니다.",
+      "keywords": [
+        "중등교육",
+        "글쓰기",
+        "문해력",
+        "조선일보",
+        "nie",
+        "수강생모집",
+        "토론"
+      ],
+      "creator": [
+        "조선일보"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "top",
+        "education"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:40:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:24",
+      "image_url": "https://www.chosun.com/resizer/v2/TQGGMEK3SJH3NLA3KFXCM7KXIA.jpg?auth=36373e81e3d7cd73415062ca0173ad4ef0d406d37eeae2ff26bddafa58e27dff&width=300&height=157&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "115dd4ea8a33a06ca1dee6563ef2072a",
+      "link": "https://www.chosun.com/national/obituary-personnel/2026/10/07/PHEZ7CY4SNEVNL46554XTECHTU/",
+      "title": "[부음] 안성익 영남대 경영학과 교수 별세 외",
+      "description": "영남대학교 경영학과 안성익 교수를 포함한 각계 인사들의 부고 소식을 전달함. 유가족 정보와 함께 주요 병원 장례식장 발인 일자 및 연락처를 명시하여 관련 정보를 안내함.",
+      "keywords": [
+        "장례식장",
+        "부고",
+        "별세",
+        "발인",
+        "영남대"
+      ],
+      "creator": [
+        "조선일보"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "top",
+        "education"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:40:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:24",
+      "image_url": null,
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "247208bcce3c5dced685892d8ec43111",
+      "link": "https://www.chosun.com/national/nie/japanese/2026/10/07/IPIRN6RLERBUNKW7PKCR2XK72A/",
+      "title": "[입에 착착 붙는 일본어] 유명무실해지다",
+      "description": null,
+      "keywords": null,
+      "creator": [
+        "조선일보"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "crime",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:34:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:24",
+      "image_url": "https://www.chosun.com/resizer/v2/5ZE7AMYVQNB2LMGDAOJGPWJRIE.jpg?auth=dbc80063a4a7a04f6a4f5f3de20c6b3eb76915e0c6123fe35c3254036c4d815c&width=650&height=341&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "9794ece213eb3efb1ba63e7cb6e7fb27",
+      "link": "https://www.chosun.com/national/nie/chinese/2026/10/07/BQCY3PEVZBA5FIS4S4YVUNJI7Y/",
+      "title": "[매일매일 중국어 한마디] 굼뜨다",
+      "description": null,
+      "keywords": null,
+      "creator": [
+        "조선일보"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "top",
+        "education"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 15:34:00",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 16:04:24",
+      "image_url": "https://www.chosun.com/resizer/v2/Z2TAHILGGJG65O4LEPGLNYUIYU.jpg?auth=652c278a7207a063566d45fc6803d0036fc611ea5677ed7fcf32c68ed51c1748&width=650&height=341&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "53f801b2d70161e69071584405df7211",
+      "link": "https://www.chosun.com/national/regional/2026/10/06/LQC54BZSZBFVTKDQXEBIYTYEEY/",
+      "title": "나주 주택서 60대 부부 흉기 찔려 숨진 채 발견",
+      "description": "전남 나주시의 한 주택에서 60대 부부가 결박된 채 흉기에 찔려 숨진 상태로 발견되었습니다. 경찰은 사건의 심각성을 인지하고 즉각적인 수사에 착수하였으며, 현재 현장 증거 수집과 함께 도주한 용의자를 검거하기 위해 추적 활동을 벌이고 있습니다.",
+      "keywords": [
+        "경찰 수사",
+        "나주",
+        "흉기 피습",
+        "부부 살인 사건",
+        "결박"
+      ],
+      "creator": [
+        "김미희 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "crime",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 13:31:03",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 14:03:59",
+      "image_url": "https://www.chosun.com/resizer/v2/GMYWEYRXHE4TIYRRG5RDSMJSGI.jpg?auth=4e1684c25dabdc1566dfe9fca5f5fe924462d95f6e1529f23da5c3bcca9f3f63&width=1200&height=630&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "57e19c8caa57625621ccfdb77645b9a6",
+      "link": "https://www.chosun.com/national/regional/2026/10/06/BUGTDVQFABA25NI75M4MTSMQ64/",
+      "title": "무면허로 운전하다 사고 내고 도주한 10대 입건",
+      "description": "경기 시흥에서 고교생 A군이 무면허로 렌터카를 운전하던 중 교차로에서 후진 사고를 내고 도주했다가 경찰에 검거되었습니다. 경찰은 정확한 사고 경위를 조사하는 한편, 미성년자가 어떻게 렌터카를 빌릴 수 있었는지 대여 과정 전반에 대한 수사를 진행하고 있습니다.",
+      "keywords": [
+        "시흥경찰서",
+        "무면허",
+        "교통사고",
+        "고교생",
+        "렌터카"
+      ],
+      "creator": [
+        "김미희 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "crime",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 13:15:42",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 13:34:40",
+      "image_url": "https://www.chosun.com/resizer/v2/ME3TQODCMUYDSMBUGRTGCOJXG4.jpg?auth=230e386921c9d2f5796f8a12490accb1415395fef985a9a9e204a3cbaf3cc29b&width=1200&height=630&smart=true",
+      "video_url": null,
+      "source_id": "chosun",
+      "source_name": "Chosun",
+      "source_priority": 9559,
+      "source_url": "https://www.chosun.com",
+      "source_icon": "https://i.newsdata.io/chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    },
+    {
+      "article_id": "2f2c8add7f73e7b4234e5840755b6a47",
+      "link": "https://biz.chosun.com/topics/law_firm/2026/10/06/GI3R55DOXZDINCHHBL6LOFQUBI/",
+      "title": "임은정 “중수청 정상 가동 불가능”… 윤호중 “다 사실은 아니다”",
+      "description": null,
+      "keywords": null,
+      "creator": [
+        "손덕호 기자"
+      ],
+      "language": "korean",
+      "country": [
+        "south korea"
+      ],
+      "category": [
+        "crime",
+        "top"
+      ],
+      "datatype": "news",
+      "pubDate": "2026-10-06 11:51:40",
+      "pubDateTZ": "UTC",
+      "fetched_at": "2026-10-06 12:02:14",
+      "image_url": "https://biz.chosun.com/resizer/v2/BB3YYN4XSRL3XIF7AT6PZOPZOA.jpg?auth=27ef2092f3af41a7642f0aa10718072ec998650b82aafc92c95b0cb80287da5b&width=1200&height=630&smart=true",
+      "video_url": null,
+      "source_id": "biz_chosun",
+      "source_name": "Chosunbiz",
+      "source_priority": 7948,
+      "source_url": "https://biz.chosun.com",
+      "source_icon": "https://i.newsdata.io/biz_chosun.png",
+      "sentiment": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "sentiment_stats": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_tag": "ONLY AVAILABLE IN PROFESSIONAL AND CORPORATE PLANS",
+      "ai_region": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_org": "ONLY AVAILABLE IN CORPORATE PLANS",
+      "ai_summary": "ONLY AVAILABLE IN PAID PLANS",
+      "duplicate": false
+    }
+  ],
+  "nextPage": "NEXT_PAGE_TOKEN"
+}
